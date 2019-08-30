@@ -2,11 +2,25 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { userLoginFetch } from '../redux/actions';
 import { Redirect } from 'react-router-dom';
+import Navbar from './Navbar';
 
 class Login extends Component {
   state = {
     email: '',
     password: '',
+    first_name: '',
+    last_name: '',
+    level_of_study: '',
+    graduation_year: '',
+    major: '',
+    gender: '',
+    gender_other: '',
+    date_of_birth: '',
+    race: '',
+    race_other: '',
+    phone_number: '',
+    shirt_size: '',
+
     redirectToHome: false
   }
 
@@ -31,12 +45,16 @@ class Login extends Component {
       return <Redirect to={{pathname: '/home'}}/>
     }
     return(
-      <form onSubmit={this.handleSubmit}>
-        <input name='email' placeholder='email' value={this.state.email} onChange={this.handleChange}/>
-        <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleChange}/>
-        <input type='submit'/>
-      </form>
-
+      <div>
+        <Navbar />
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <input name='email' placeholder='email' value={this.state.email} onChange={this.handleChange}/>
+            <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleChange}/>
+            <input type='submit'/>
+          </form>
+        </div>
+      </div>
     )
   }
 }
