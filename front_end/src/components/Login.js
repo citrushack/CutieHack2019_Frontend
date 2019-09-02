@@ -8,19 +8,6 @@ class Login extends Component {
   state = {
     email: '',
     password: '',
-    first_name: '',
-    last_name: '',
-    level_of_study: '',
-    graduation_year: '',
-    major: '',
-    gender: '',
-    gender_other: '',
-    date_of_birth: '',
-    race: '',
-    race_other: '',
-    phone_number: '',
-    shirt_size: '',
-
     redirectToHome: false
   }
 

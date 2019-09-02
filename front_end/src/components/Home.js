@@ -11,13 +11,12 @@ class Home extends Component {
     return(
       <div>
         <Navbar auth={this.state.auth}/>
+        <div>
+          <button>APPLY</button>
+        </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-
-}
-
-export default connect(mapStateToProps, null)(Home);
+export default Home;

@@ -3,19 +3,44 @@ import React from 'react';
 
 export const userPostFetch = (user) => {
   return dispatch => {
-    return fetch("http://localhost:5000/signup", {
+    return fetch("http://85318eb5.ngrok.io/apply/", {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({user}),
+      body: JSON.stringify({
+        "email": user.email,
+        "password": user.password,
+        "profile":{
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "school": user.school,
+            "level_of_study": user.level_of_study,
+            "graduation_year": user.graduation_year,
+            "major": user.major,
+            "gender": user.gender,
+            "gender_other": user.gender_other,
+            "date_of_birth": user.date_of_birth,
+            "race": user.race,
+            "race_other": user.race_other,
+            "phone_number": user.phone_number,
+            "shirt_size": user.shirt_size,
+            "dietary_restrictions": user.dietary_restrictions,
+            "linkedin": "",
+            "github":"",
+            "resume":"",
+            "conduct_box":"True",
+            "share_box":"True"
+        }
+      }),
       method: "POST",
     })
       .then(resp => resp.json())
       .then(resp => {
         if (resp.message) {
         } else {
-          localStorage.setItem("token", resp.jwt)
-          dispatch(loginUser(resp.user))
+          console.log(resp)
+          // localStorage.setItem("token", resp.jwt)
+          // dispatch(loginUser(resp.user))
         }
       })
       .catch(err => console.log(err))
@@ -24,7 +49,7 @@ export const userPostFetch = (user) => {
 
 export const userLoginFetch = (user) => {
   return dispatch => {
-    return fetch("http://localhost:5000/cutielogin", {
+    return fetch("http://85318eb5.ngrok.io/api/login", {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -35,6 +60,7 @@ export const userLoginFetch = (user) => {
       .then(resp => {
         if (resp.message) {
         } else {
+          console.log(resp.jwt)
           localStorage.setItem("token", resp.jwt)
           dispatch(loginUser(resp.user))
           return <Redirect to={{pathname: '/home'}} />
@@ -48,11 +74,11 @@ export const getProfileFetch = () => {
   return dispatch => {
     const token = localStorage.token;
     if (token) {
-      return fetch("http://localhost:5000/cutietest", {
+      return fetch("http://85318eb5.ngrok.io/api/validateToken", {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': token
         }
       })
         .then(resp => resp.json())
@@ -62,6 +88,7 @@ export const getProfileFetch = () => {
             // If this happens, you may want to remove the invalid token.
             localStorage.removeItem("token")
           } else {
+            console.log(resp)
             dispatch(loginUser(resp.user))
           }
         })
