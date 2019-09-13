@@ -1,0 +1,44 @@
+.loginForm {
+  width: 25vw;
+  height: 45vh;
+  border: 2px solid white;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 8px;
+}
+
+.inputFields {
+  width: 70%;
+  margin: auto;
+}
+
+.ant-input {
+  background-color: rgb(20,36,53) !important;
+}
+
+.submitField {
+  width: 70%;
+  margin: auto;
+  margin-top: 6%;
+}
+.submitButton {
+  width: 100%;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+input {
+  border-radius: 4px;
+  border: none !important;
+}
+
+.loginText{
+  color: white;
+}
+
+.loginBorder{
+  width: 80%;
+  margin: auto;
+  padding-top: 6%;
+  border-bottom: 2px solid white;
+}

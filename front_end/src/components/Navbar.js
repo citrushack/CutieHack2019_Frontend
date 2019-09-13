@@ -13,24 +13,14 @@ class Navbar extends Component {
   }
 
   LoginRedirect = () => {
-    this.setState({
-      redirectToLogin: true
-    })
+    window.location.assign('/login')
   }
 
   HomeRedirect = () => {
-    this.setState({
-      redirectToHome: true
-    })
+    window.location.assign('/')
   }
 
   render(){
-    if (this.state.redirectToLogin) {
-      return <Redirect to={{pathname: '/login'}}/>
-    }
-    else if(this.state.redirectToHome) {
-      return <Redirect to={{pathname: '/home'}}/>
-    }
     return(
       <div>
         <div className="nav">

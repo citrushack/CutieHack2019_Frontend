@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import { userLoginFetch } from '../redux/actions';
 import { Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
+import { Input, Icon } from 'antd';
+import './css/Login.css';
 
 class Login extends Component {
   state = {
@@ -23,23 +25,32 @@ class Login extends Component {
    this.setState({
      email: '',
      password: '',
-     redirectToHome: true
    })
+   window.location.assign('/')
  }
 
   render(){
-    if (this.state.redirectToHome === true) {
-      return <Redirect to={{pathname: '/home'}}/>
-    }
+
     return(
       <div>
-        <Navbar />
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <input name='email' placeholder='email' value={this.state.email} onChange={this.handleChange}/>
-            <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleChange}/>
-            <input type='submit'/>
-          </form>
+        <Navbar loginCheck={this.props.redirectToLogin}/>
+        <div className="loginForm">
+            <div style={{marginTop: '8%'}}className="inputFields">
+              <div className="loginText">EMAIL</div>
+              <input style={{width: '100%'}} placeholder="Email" />
+            </div>
+            <div style={{marginTop: '6%'}}className="inputFields">
+              <div className="loginText">PASSWORD</div>
+              <input style={{width: '100%'}} placeholder="Password" />
+            </div>
+            <div className="loginBorder"></div>
+            <div className="submitField">
+              <button className="submitButton">LOGIN</button>
+            </div>
+            <div className="submitField">
+              <button className="submitButton">SIGN UP</button>
+            </div>
+            <div style={{color: 'white', width: '100%', marginTop: '6%', textAlign: 'center'}}>FORGOT PASSWORD?</div>
         </div>
       </div>
     )

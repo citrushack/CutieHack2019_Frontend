@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 import reducer from './redux/reducers/auth';
 import thunk from "redux-thunk";
+import 'antd/dist/antd.css';
 
 export const store = createStore(
   reducer,
