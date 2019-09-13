@@ -1,16 +1,17 @@
 .nav {
   display: flex;
-  background-color: black;
-  float: right;
+  float: left;
+  width: 100%;
 }
 .buttons {
   color: #fff;
+  font-size: 1em;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
-  background-color:black;
+  background-color: #152436;
   border: none;
-  padding: 15px 20px;
+  padding: 15px;
   position: relative;
 }
 .buttons:after {
