@@ -5,6 +5,8 @@
   "dependencies": {
     "antd": "^3.23.2",
     "react": "^16.8.6",
+    "react-animated-css": "^1.2.1",
+    "react-animations": "^1.0.0",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",

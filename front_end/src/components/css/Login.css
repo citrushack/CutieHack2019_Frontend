@@ -1,10 +1,17 @@
 .loginForm {
   width: 25vw;
   height: 45vh;
-  border: 2px solid white;
   margin: auto;
   margin-top: 10%;
   border-radius: 8px;
+  background-color: #28384F;
+}
+
+.topText {
+  color: white;
+  padding: 8px;
+  padding-left: 20px;
+  font-size: 15px;
 }
 
 .inputFields {
@@ -12,8 +19,13 @@
   margin: auto;
 }
 
-.ant-input {
-  background-color: rgb(20,36,53) !important;
+.customInput {
+  width: 100%;
+  border: 1px solid #E0E0E0 !important;
+}
+
+*:focus {
+    outline: none;
 }
 
 .submitField {
@@ -21,24 +33,36 @@
   margin: auto;
   margin-top: 6%;
 }
+
+::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+
 .submitButton {
   width: 100%;
-  border-radius: 12px;
-  padding: 4px;
+  border-radius: 35px;
+  padding: 6px;
+  color: white;
+  background-color: #28384F;
 }
 
 input {
   border-radius: 4px;
   border: none !important;
+  padding: 10px;
+  background-color: #445367;
 }
 
 .loginText{
   color: white;
+  padding-bottom: 4px;
 }
 
 .loginBorder{
   width: 80%;
   margin: auto;
   padding-top: 6%;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #FCD139;
 }

@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
 import { Input, Icon } from 'antd';
 import './css/Login.css';
+import { Animated } from "react-animated-css";
 
 class Login extends Component {
   state = {
@@ -34,14 +35,14 @@ class Login extends Component {
     return(
       <div>
         <Navbar loginCheck={this.props.redirectToLogin}/>
-        <div className="loginForm">
-            <div style={{marginTop: '8%'}}className="inputFields">
-              <div className="loginText">EMAIL</div>
-              <input style={{width: '100%'}} placeholder="Email" />
+        <Animated animationIn="fadeIn" isVisible={true}>
+          <div className="loginForm">
+            <div className="topText">Log in</div>
+            <div style={{marginTop: '4%'}}className="inputFields">
+              <input type='text' className="customInput" placeholder="Email" />
             </div>
             <div style={{marginTop: '6%'}}className="inputFields">
-              <div className="loginText">PASSWORD</div>
-              <input style={{width: '100%'}} placeholder="Password" />
+              <input type='password' className="customInput" placeholder="Password" />
             </div>
             <div className="loginBorder"></div>
             <div className="submitField">
@@ -51,7 +52,9 @@ class Login extends Component {
               <button className="submitButton">SIGN UP</button>
             </div>
             <div style={{color: 'white', width: '100%', marginTop: '6%', textAlign: 'center'}}>FORGOT PASSWORD?</div>
-        </div>
+          </div>
+        </Animated>
+
       </div>
     )
   }
