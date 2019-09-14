@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import './css/Navbar.css';
 
+const Icon = require('./assets/icon.png');
+
 const noScroll = {
 }
 
 const yesScroll = {
-  backgroundColor: '#7B6E59'
+  backgroundColor: '#2E3E4F'
 }
 
 class Navbar extends Component {

@@ -5,6 +5,7 @@
   margin-top: 10%;
   border-radius: 8px;
   background-color: #28384F;
+  border: 1px solid #FCD139;
 }
 
 .topText {
@@ -61,8 +62,8 @@ input {
 }
 
 .loginBorder{
-  width: 80%;
+  width: 70%;
   margin: auto;
   padding-top: 6%;
-  border-bottom: 2px solid #FCD139;
+  border-bottom: 1px solid #B8B8B8;
 }
