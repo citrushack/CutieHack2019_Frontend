@@ -1,14 +1,19 @@
 .nav {
   display: flex;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
+
+a:hover { color:white !important;}
+
 .buttons {
   color: #fff;
   font-size: 1em;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
-  background-color: #152436;
+  background-color: Transparent;
   border: none;
   padding: 15px;
   position: relative;

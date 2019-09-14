@@ -1,0 +1,65 @@
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import './css/Navbar.css';
+
+class Navbar extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      Authenticated: true,
+      redirectToLogin: false,
+      redirectToHome: false,
+      isTop: true
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 100;
+      if (isTop !== this.state.isTop) {
+        this.onScroll(isTop);
+      }
+    });
+  }
+
+  onScroll = (isTop) => {
+    this.setState({ isTop });
+  }
+
+  LoginRedirect = () => {
+    window.location.assign('/login')
+  }
+
+  HomeRedirect = () => {
+    window.location.assign('/')
+  }
+
+  changeColor = () => {
+    if (this.state.isTop) {
+      return       <div>
+              <div className="nav">
+                <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
+                <a className="buttons" href='#section2'>ABOUT</a>
+                <button className="buttons">FAQ</button>
+                <button className="buttons">SPONSORS</button>
+                <button className="buttons">CONTACT</button>
+                {this.state.Authenticated ? (
+                  <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+                ):(
+                  <button className="buttons">LOGOUT</button>
+                )}
+              </div>
+            </div>
+    }
+  }
+
+  render(){
+    return(
+      <div>
+        {this.changeColor}
+      </div>
+    )
+  }
+}
+
+export default Navbar;

@@ -12,7 +12,7 @@
   font-weight: 300;
   font-size: 6em;
   margin: 0;
-  margin-top: 5%;
+  margin-top: 10%;
   padding-left: 15px;
   text-shadow: 2.5px 2.5px #FCD138;
   letter-spacing: 8px;
@@ -22,4 +22,9 @@
   color: white;
   font-weight: 400;
   font-size: 2em;
+}
+
+.section2 {
+  height: 80vh;
+  width: 80vw;
 }

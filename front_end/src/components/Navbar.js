@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import './css/Navbar.css';
 
+const noScroll = {
+}
+
+const yesScroll = {
+  backgroundColor: '#7B6E59'
+}
+
 class Navbar extends Component {
   constructor(props){
     super(props);
@@ -9,7 +16,21 @@ class Navbar extends Component {
       Authenticated: true,
       redirectToLogin: false,
       redirectToHome: false,
+      isTop: true
     }
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 40;
+      if (isTop !== this.state.isTop) {
+        this.onScroll(isTop);
+      }
+    });
+  }
+
+  onScroll = (isTop) => {
+    this.setState({ isTop });
   }
 
   LoginRedirect = () => {
@@ -21,20 +42,28 @@ class Navbar extends Component {
   }
 
   render(){
+    let nav;
+    if (this.state.isTop){
+      nav = noScroll
+    }
+    else {
+      nav = yesScroll
+    }
+
     return(
       <div>
-        <div className="nav">
-          <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
-          <button className="buttons">ABOUT</button>
-          <button className="buttons">FAQ</button>
-          <button className="buttons">SPONSORS</button>
-          <button className="buttons">CONTACT</button>
-          {this.state.Authenticated ? (
-            <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
-          ):(
-            <button className="buttons">LOGOUT</button>
-          )}
-        </div>
+         <div className="nav" style={nav}>
+           <button style={nav} className="buttons" onClick={this.HomeRedirect}>HOME</button>
+           <a className="buttons" href='#section2'>ABOUT</a>
+           <button className="buttons">FAQ</button>
+           <button className="buttons">SPONSORS</button>
+           <button className="buttons">CONTACT</button>
+           {this.state.Authenticated ? (
+             <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+           ):(
+             <button className="buttons">LOGOUT</button>
+           )}
+         </div>
       </div>
     )
   }
