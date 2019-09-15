@@ -58,7 +58,7 @@ class Navbar extends Component {
            <button style={nav} className="buttons" onClick={this.HomeRedirect}>HOME</button>
            <a className="buttons" href='#section2'>ABOUT</a>
            <a className="buttons" href='#section3'>FAQs</a>
-           <button className="buttons">SPONSORS</button>
+           <a className="buttons" href='#section4'>SPONSORS</a>
            <button className="buttons">CONTACT</button>
            {this.state.Authenticated ? (
              <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>

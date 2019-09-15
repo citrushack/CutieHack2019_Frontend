@@ -35,11 +35,6 @@
   padding-top: 6%;
 }
 
-.sec2Title {
-  color: white;
-  font-size: 4em;
-}
-
 .sec2Text {
   color: white;
   font-size: 1.5em;
@@ -47,7 +42,7 @@
 }
 
 .section3 {
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
 }
 
@@ -61,7 +56,7 @@
   margin-right: 0;
 }
 
-.sec3Title {
+.sec2Title, .sec3Title, .sec4Title {
   color: white;
   font-size: 4em
 }
@@ -74,7 +69,7 @@
 }
 
 .faqBubble {
-  width: 80%;
+  width: 85%;
   padding: 15px;
 }
 
@@ -101,4 +96,35 @@
 .cardStyling {
   background-color: transparent;
   border: none;
+}
+
+.secondaryFaq {
+  margin-top: 4%;
+}
+
+.section4 {
+  width: 100vw;
+  height: 80vh;
+}
+
+.footer {
+  width: 100vw;
+  height: 20vh;
+  background-color: #2E3E4E;
+}
+
+.footerWrap {
+  display: flex;
+  padding-top: .5%;
+}
+
+.footerIcon {
+  color: white !important;
+  font-size: 1.8em;
+  padding: 20px;
+}
+
+.footerText {
+  color: white;
+  font-size: 1.2em
 }

@@ -78,22 +78,64 @@ class Home extends Component {
               <Row className="noMargin">
                 <Col className="noPadding">
                   <div className="faqBubble" style={{float: 'right'}}>
-                    <Arrow title={'Who can attend?'} body={'We welcome all undergraduate UCR students! We do, however, encourage novice and first time hackers for this event.'} />
-                    <Arrow title={'Is there free food?'} body={'Yes! Meals, refreshments, and snacks will be provided throughout the event'} />
-                    <Arrow title={'Do I need a team?'} body={'Teams are not required, but are recommended. Teams are capped at 4 members and you will have an opportunity to form teams at the start of the event as well.'} />
+                    <div>
+                      <Arrow title={'What is a hackathon'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'Who can attend?'} body={'We welcome all undergraduate UCR students! We do, however, encourage novice and first time hackers for this event.'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'Is there free food?'} body={'Yes! Meals, refreshments, and snacks will be provided throughout the event'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'Do I need a team?'} body={'Teams are not required, but are recommended. Teams are capped at 4 members and you will have an opportunity to form teams at the start of the event as well.'} />
+                    </div>
+
                   </div>
                 </Col>
                 <Col className="noPadding">
                   <div className="faqBubble">
-                    <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking devices!'} />
-                    <Arrow title={'What should I bring?'} body={'Student IDs are required. Consider brining a hacking machine, headphones, and a pillow!'} />
-                    <Arrow title={'What if I still have a question?'} body={'Email us at citrushack@gmail.com. We love answering questions'} />
+                    <div>
+                      <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking devices!'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'What should I bring?'} body={'Student IDs are required. Consider brining a hacking machine, headphones, and a pillow. Feel free to bring your own parts as well but note that soldering is not allowed at CutieHack.'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'What if I still have a question?'} body={'Email us at citrushack@gmail.com. We love answering questions'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'What if I do not know how to code'} body={"CutieHack is a beginner friendly hackathon and is open to all skill levels. During the event take the time to checkout workshops and collaborate with others"} />
+                    </div>
                   </div>
                 </Col>
               </Row>
             </Container>
           </div>
         </ScrollableAnchor>
+        <ScrollableAnchor id={'section4'}>
+          <div className="section4">
+            <div style={{width: '100%', textAlign: 'center'}}>
+              <h1 className="sec4Title">Sponsors</h1>
+            </div>
+          </div>
+        </ScrollableAnchor>
+        <div className="footer">
+          <div className="footerWrap">
+            <div style={{margin: 'auto'}}>
+              <Icon className="footerIcon" type="facebook" />
+              <Icon className="footerIcon" type="mail" />
+              <Icon className="footerIcon" type="twitter-square" theme="filled" />
+              <Icon className="footerIcon" type="instagram" />
+            </div>
+          </div>
+          <div style={{textAlign: 'center'}}>
+            <p className="footerText">Made with ♥ in Riverside, CA</p>
+          </div>
+          <div style={{textAlign: 'center'}}>
+            <p className="footerText">© 2019 Cutie Hack</p>
+          </div>
+        </div>
       </div>
     )
   }
