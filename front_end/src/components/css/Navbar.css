@@ -3,6 +3,7 @@
   width: 100%;
   position: fixed;
   top: 0;
+  padding-left: 10px;
 }
 
 a:hover { color:white !important;}

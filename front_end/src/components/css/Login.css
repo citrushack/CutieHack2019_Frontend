@@ -1,3 +1,8 @@
+.login {
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+}
 .loginForm {
   width: 25vw;
   height: 45vh;
@@ -40,7 +45,6 @@
   opacity: 1;
 }
 
-
 .submitButton {
   width: 100%;
   border-radius: 35px;
@@ -66,4 +70,8 @@ input {
   margin: auto;
   padding-top: 6%;
   border-bottom: 1px solid #B8B8B8;
+}
+
+input:focus{
+  background-color: #142435;
 }

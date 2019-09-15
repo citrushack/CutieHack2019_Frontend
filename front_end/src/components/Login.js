@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
 import { Input, Icon } from 'antd';
 import './css/Login.css';
-import { Animated } from "react-animated-css";
+import { Animated } from 'react-animated-css';
 
 class Login extends Component {
   state = {
@@ -33,7 +33,7 @@ class Login extends Component {
   render(){
 
     return(
-      <div>
+      <div className="login">
         <Navbar loginCheck={this.props.redirectToLogin}/>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="loginForm">

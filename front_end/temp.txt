@@ -63,3 +63,18 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
+
+
+
+<div>
+  <div className="flex">
+    <div className="faqTitle">{this.props.title}</div>
+    <Icon onClick={this.handleOpen} className="arrowIcon" type="down" />
+  </div>
+  {this.state.isOpen &&
+  <Animated animationIn="fadeIn" isVisible={true}>
+    <p className="faqText">{this.props.body}</p>
+  </Animated>
+  }
+</div>
