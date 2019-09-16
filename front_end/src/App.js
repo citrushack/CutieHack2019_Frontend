@@ -3,6 +3,8 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Home from './components/Home';
 import Profile from './components/Profile';
+import Register from './components/Register';
+import { PasswordReset } from './components/PasswordReset';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -32,6 +34,8 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route path="/signup" exact component={Signup}/>
             <Route path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
+            <Route path="/passwordReset/:token" component={PasswordReset}/>
             <PrivateRoute path='/profile' component={Profile}/>
           </Switch>
         </Router>

@@ -1,0 +1,10 @@
+.formText {
+  margin: 0;
+  color: white;
+  font-size: 0.8em;
+}
+
+.registerInput {
+  background-color: green;
+  border: none;
+}

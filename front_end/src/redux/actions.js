@@ -3,13 +3,14 @@ import React from 'react';
 
 export const userPostFetch = (user) => {
   return dispatch => {
-    return fetch("http://85318eb5.ngrok.io/apply/", {
+    return fetch("http://c1078b2b.ngrok.io/apply/", {
       headers: {
         'Content-Type': 'application/json',
       },
+      method: "POST",
       body: JSON.stringify({
         "email": user.email,
-        "password": user.password,
+        "password": user.password1,
         "profile":{
             "first_name": user.first_name,
             "last_name": user.last_name,
@@ -32,15 +33,12 @@ export const userPostFetch = (user) => {
             "share_box":"True"
         }
       }),
-      method: "POST",
     })
       .then(resp => resp.json())
       .then(resp => {
         if (resp.message) {
         } else {
           console.log(resp)
-          // localStorage.setItem("token", resp.jwt)
-          // dispatch(loginUser(resp.user))
         }
       })
       .catch(err => console.log(err))

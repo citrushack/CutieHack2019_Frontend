@@ -7,6 +7,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { Row, Container, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Animated } from 'react-animated-css';
+import { Pulse } from 'react-motions'
 import './css/Home.css';
 
 class Arrow extends Component {
@@ -43,9 +44,25 @@ const Hero = require('./assets/hero.png');
 
 class Home extends Component {
   state = {
-    auth: false,
-    isOpen: false
+    auth: false
   }
+
+  handleFacebook = () => {
+    window.location.assign('https://www.facebook.com/cutiehack/')
+  }
+
+  handleMail = () => {
+    window.location.assign('https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=citrushack@gmail.com')
+  }
+
+  handleTwitter = () => {
+    window.location.assign('https://twitter.com/citrushack')
+  }
+
+  handleInstagram = () => {
+    window.location.assign('https://www.instagram.com/citrushack_ucr/')
+  }
+
 
   render(){
     console.log(this.state.arrow1)
@@ -120,22 +137,24 @@ class Home extends Component {
             </div>
           </div>
         </ScrollableAnchor>
-        <div className="footer">
-          <div className="footerWrap">
-            <div style={{margin: 'auto'}}>
-              <Icon className="footerIcon" type="facebook" />
-              <Icon className="footerIcon" type="mail" />
-              <Icon className="footerIcon" type="twitter-square" theme="filled" />
-              <Icon className="footerIcon" type="instagram" />
+        <ScrollableAnchor id={'section5'}>
+          <div className="footer">
+            <div className="footerWrap">
+              <div style={{margin: 'auto'}}>
+                <Icon onClick={this.handleFacebook} className="footerIcon" type="facebook" />
+                <Icon onClick={this.handleMail} className="footerIcon" type="mail" />
+                <Icon onClick={this.handleTwitter} className="footerIcon" type="twitter-square" theme="filled" />
+                <Icon onClick={this.handleInstagram} className="footerIcon" type="instagram" />
+              </div>
+            </div>
+            <div style={{textAlign: 'center'}}>
+              <p className="footerText">Made with ♥ in Riverside, CA</p>
+            </div>
+            <div style={{paddingBottom: '0.5%', textAlign: 'center'}}>
+              <p className="footerText">© 2019 Cutie Hack</p>
             </div>
           </div>
-          <div style={{textAlign: 'center'}}>
-            <p className="footerText">Made with ♥ in Riverside, CA</p>
-          </div>
-          <div style={{textAlign: 'center'}}>
-            <p className="footerText">© 2019 Cutie Hack</p>
-          </div>
-        </div>
+        </ScrollableAnchor>
       </div>
     )
   }

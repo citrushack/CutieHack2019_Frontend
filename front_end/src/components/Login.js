@@ -11,7 +11,8 @@ class Login extends Component {
   state = {
     email: '',
     password: '',
-    redirectToHome: false
+    redirectToHome: false,
+    redirectToRegister: false,
   }
 
   handleChange = (event) => {
@@ -28,9 +29,18 @@ class Login extends Component {
      password: '',
    })
    window.location.assign('/')
+  }
+
+ handleRegister = () =>{
+   this.setState({
+     redirectToRegister: true
+   })
  }
 
   render(){
+    if (this.state.redirectToRegister) {
+      return <Redirect push to="/register" />
+    }
 
     return(
       <div className="login">
@@ -49,7 +59,7 @@ class Login extends Component {
               <button className="submitButton">LOGIN</button>
             </div>
             <div className="submitField">
-              <button className="submitButton">SIGN UP</button>
+              <button onClick={this.handleRegister}className="submitButton">SIGN UP</button>
             </div>
             <div style={{color: 'white', width: '100%', marginTop: '6%', textAlign: 'center'}}>FORGOT PASSWORD?</div>
           </div>
