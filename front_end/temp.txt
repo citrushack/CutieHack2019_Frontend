@@ -78,3 +78,45 @@ export default Navbar;
   </Animated>
   }
 </div>
+
+
+
+
+
+import React, { Component } from 'react'
+
+export function PasswordReset({ match }) {
+  state = {
+    password1: ''
+  }
+
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  }
+
+  handleReset = () => {
+    fetch("http://c1078b2b.ngrok.io/api/passwordReset/", {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({'password': this.state.password1}),
+      method: "POST",
+    })
+      .then(resp => resp.json())
+      .then(resp => {
+        if (resp.message) {
+          console.log(resp.message)
+        }
+      })
+      .catch(err => console.log(err))
+  }
+
+
+  return (
+    <div>
+      <input type="password" name="password1" placeholder="password1" value={this.state.password1} onChange={this.handleChange}/>
+      <h3>Token: {match.params.token}</h3>
+      <button onClick={this.handleSubmit} type="submit">Submit</button>
+    </div>
+  );
+}

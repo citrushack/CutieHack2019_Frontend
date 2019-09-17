@@ -28,19 +28,37 @@ class Login extends Component {
      email: '',
      password: '',
    })
-   window.location.assign('/')
+   // window.location.assign('/')
   }
 
- handleRegister = () =>{
-   this.setState({
-     redirectToRegister: true
-   })
- }
+  handleRegister = () => {
+     this.setState({
+       redirectToRegister: true
+     })
+  }
+
+  handleReset = () => {
+    fetch("http://c1078b2b.ngrok.io/api/sendResetEmail", {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({'email': 'jshin029@ucr.edu'}),
+      method: "POST",
+    })
+      .then(resp => resp.json())
+      .then(resp => {
+        if (resp.message) {
+          console.log(resp.message)
+        }
+      })
+      .catch(err => console.log(err))
+  }
 
   render(){
     if (this.state.redirectToRegister) {
       return <Redirect push to="/register" />
     }
+    console.log(this.state.email)
 
     return(
       <div className="login">
@@ -49,19 +67,19 @@ class Login extends Component {
           <div className="loginForm">
             <div className="topText">Log in</div>
             <div style={{marginTop: '4%'}}className="inputFields">
-              <input type='text' className="customInput" placeholder="Email" />
+              <input type='text' name="email" value={this.state.email} className="customInput" placeholder="Email" onChange={this.handleChange}/>
             </div>
             <div style={{marginTop: '6%'}}className="inputFields">
-              <input type='password' className="customInput" placeholder="Password" />
+              <input type='password' name="password" value={this.state.password} className="customInput" placeholder="Password" onChange={this.handleChange}/>
             </div>
             <div className="loginBorder"></div>
             <div className="submitField">
-              <button className="submitButton">LOGIN</button>
+              <button onClick={this.handleSubmit} className="submitButton">LOGIN</button>
             </div>
             <div className="submitField">
               <button onClick={this.handleRegister}className="submitButton">SIGN UP</button>
             </div>
-            <div style={{color: 'white', width: '100%', marginTop: '6%', textAlign: 'center'}}>FORGOT PASSWORD?</div>
+            <div onClick={this.handleReset} style={{color: 'white', width: '100%', marginTop: '6%', textAlign: 'center'}}>FORGOT PASSWORD?</div>
           </div>
         </Animated>
 
@@ -71,7 +89,8 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  userLoginFetch: userInfo => dispatch(userLoginFetch(userInfo))
+  userLoginFetch: userInfo => dispatch(userLoginFetch(userInfo)),
+
 })
 
 export default connect(null, mapDispatchToProps)(Login);

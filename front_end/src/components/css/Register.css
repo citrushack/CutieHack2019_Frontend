@@ -5,6 +5,8 @@
 }
 
 .registerInput {
-  background-color: green;
   border: none;
+  border-bottom: 1px solid #E0E0E0;
+  background-color: transparent;
+  color: #DCDCDC;
 }

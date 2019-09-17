@@ -4,7 +4,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import Register from './components/Register';
-import { PasswordReset } from './components/PasswordReset';
+import PasswordReset from './components/PasswordReset';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';

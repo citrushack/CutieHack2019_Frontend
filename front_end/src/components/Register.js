@@ -88,11 +88,15 @@ class Registeration extends Component {
         <form onSubmit={this.handleSubmit}>
           <p className="formText">EMAIL *</p>
           <input className="registerInput" type="email" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange}/>
-          <p className="formText">PASSWORD *</p>
+          <p className="formText">PASSWORD1 *</p>
           <input className="registerInput" type="password" name="password1" placeholder="password1" value={this.state.password1} onChange={this.handleChange}/>
+          <p className="formText">PASSWORD2 *</p>
           <input className="registerInput" type="password" name="password2" placeholder="password2" value={this.state.password2} onChange={this.handleChange}/>
+          <p className="formText">FIRST NAME *</p>
           <input className="registerInput" type="text" name="first_name" placeholder="first name" value={this.state.first_name} onChange={this.handleChange}/>
+          <p className="formText">LAST NAME *</p>
           <input className="registerInput" type="text" name="last_name" placeholder="last name" value={this.state.last_name} onChange={this.handleChange}/>
+          <p className="formText">SCHOOL *</p>
           <input className="registerInput" type="text" name="school" placeholder="school" value={this.state.school} onChange={this.handleChange}/>
           <input className="registerInput" type="text" name="level_of_study" placeholder="level of study" value={this.state.level_of_study} onChange={this.handleChange}/>
           <input className="registerInput" type="text" name="graduation_year" placeholder="graduation year" value={this.state.graduation_year} onChange={this.handleChange}/>
