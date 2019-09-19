@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import './css/Navbar.css';
 
-const Icon = require('./assets/icon.png');
+const Icon = require('./assets/Icon.png');
 
 const noScroll = {
 }
