@@ -1,6 +1,6 @@
 .formText {
   margin: 0;
-  color: white;
+  color: #FCD139;
   font-size: 0.8em;
 }
 
@@ -9,4 +9,43 @@
   border-bottom: 1px solid #E0E0E0;
   background-color: transparent;
   color: #DCDCDC;
+}
+
+.formFlex {
+  display: flex;
+  margin: auto;
+  width: 50%;
+}
+
+.firstInner {
+  margin-top: 5%;
+  width: 33%;
+}
+
+.secondInner {
+  margin-top: 5%;
+  width: 50%;
+}
+
+.registerContainer {
+  border-radius: 6px;
+  border: 2px dashed #FCD139;
+  width: 80%;
+  margin: auto;
+  margin-top: 4%;
+}
+
+.iconSizing {
+  width: 100%;
+}
+
+.iconContainer {
+  position: relative;
+}
+
+.innerContainer {
+  position: absolute;
+  width: 20%;
+  right: -10%;
+  top: -100px;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 
 export const userPostFetch = (user) => {
   return dispatch => {
-    return fetch("http://c1078b2b.ngrok.io/apply/", {
+    return fetch("http://b0020483.ngrok.io/apply/", {
       headers: {
         'Content-Type': 'application/json',
       },
