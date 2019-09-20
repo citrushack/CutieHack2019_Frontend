@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { userPostFetch } from '../redux/actions';
 import { Row, Container, Col } from 'react-bootstrap';
 import { Animated } from 'react-animated-css';
-import { Icon, Input, Checkbox } from 'antd'
+import { Button, Icon, Input, Checkbox } from 'antd'
 import './css/Register.css'
 
 const cutieIcon = require('./assets/Icon.png');
@@ -78,6 +78,14 @@ class Registeration extends Component {
     }
   }
 
+  LoginRedirect = () => {
+    window.location.assign('/login')
+  }
+
+  HomeRedirect = () => {
+    window.location.assign('/')
+  }
+
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
   }
@@ -90,72 +98,105 @@ class Registeration extends Component {
   render(){
     return(
         <div className="registerParent">
+        <div>
+          <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
+          <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+        </div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <form className="formContainer" onSubmit={this.handleSubmit}>
             <img className="cutieIcon" src={cutieIcon}></img>
             <div className="outerParent">
+            <div style={{marginLeft: '4%', paddingTop: '4%', marginBottom: '0'}}>
+              <h1 className="registrationTitle">Cutie Hack Registration</h1>
+            </div>
               <div className="formFlex">
                 <div className="firstInner">
                   <p className="formText">EMAIL *</p>
-                  <input className="registerInput" type="email" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Email" prefix={<Icon type="mail" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
                 <div className="firstInner">
                   <p className="formText">PASSWORD1 *</p>
-                  <input className="registerInput" type="password" name="password1" placeholder="password1" value={this.state.password1} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Password" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
                 <div className="firstInner">
                   <p className="formText">PASSWORD2 *</p>
-                  <input className="registerInput" type="password" name="password2" placeholder="password2" value={this.state.password2} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Password" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
               </div>
               <div className="formFlex">
                 <div className="secondInner">
                   <p className="formText">FIRST NAME *</p>
-                  <input className="registerInput" type="text" name="first_name" placeholder="first name" value={this.state.first_name} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="First name" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
                 <div className="secondInner">
                   <p className="formText">LAST NAME *</p>
-                  <input className="registerInput" type="text" name="last_name" placeholder="last name" value={this.state.last_name} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Last name" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
               </div>
               <div className="formFlex">
                 <div className="secondInner">
                   <p className="formText">SCHOOL *</p>
-                  <input className="registerInput" type="text" name="school" placeholder="school" value={this.state.school} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="School" prefix={<Icon type="sort-ascending" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
                 <div className="secondInner">
                   <p className="formText">LEVEL OF STUDY *</p>
-                  <input className="registerInput" type="text" name="level_of_study" placeholder="level of study" value={this.state.level_of_study} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Level of study" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
               </div>
               <div className="formFlex">
                 <div className="secondInner">
                   <p className="formText">GRADUATION YEAR *</p>
-                  <input className="registerInput" type="text" name="graduation_year" placeholder="graduation year" value={this.state.graduation_year} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Graduation year" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
                 <div className="secondInner">
                   <p className="formText">MAJOR *</p>
-                  <input className="registerInput" type="text" name="major" placeholder="major" value={this.state.major} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Major" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
               </div>
               <div className="formFlex">
                 <div className="secondInner">
                   <p className="formText">GENDER *</p>
-                  <input className="registerInput" type="text" name="gender" placeholder="gender" value={this.state.gender} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Gender" prefix={<Icon type="team" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
                 <div className="secondInner">
                   <p className="formText">GENDER OTHER *</p>
-                  <input className="registerInput" type="text" name="gender_other" placeholder="gender other" value={this.state.gender_other} onChange={this.handleChange}/>
-                </div>
-                <div className="secondInner">
-                  <p className="formText">RACE *</p>
-                  <input className="registerInput" type="text" name="race" placeholder="race" value={this.state.race} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Gender other"  prefix={<Icon type="team" style={{color: 'rgba(255,255,255)'}} />}/>
+                  </div>
                 </div>
               </div>
               <div className="formFlex">
                 <div className="secondInner">
                   <p className="formText">DATE OF BIRTH *</p>
-                  <input className="registerInput" type="text" name="date_of_birth" placeholder="date of birth" value={this.state.date_of_birth} onChange={this.handleChange}/>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Date of Birth" prefix={<Icon type="calendar" style={{color: 'rgba(255,255,255)' }} />}/>
+                  </div>
+                </div>
+                <div className="secondInner">
+                  <p className="formText">RACE *</p>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" placeholder="Race" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)' }} />}/>
+                  </div>
                 </div>
               </div>
               <div className="formFlex">
@@ -179,6 +220,14 @@ class Registeration extends Component {
                 </div>
               </div>
               <div className="formFlex">
+                <div className="checkInner">
+                  <div style={{display: 'flex'}}>
+                    <Checkbox style={{marginTop: '10px', paddingLeft: '5px'}}></Checkbox>
+                    <p className="checkText">I authorize you to share my application/registration information for event adminstration, ranking, MLH adminstration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the MLH Privacy Policy.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="formFlex">
                 <div className="secondInner">
                   <p className="formText">PHONE NUMBER *</p>
                   <div style={{width: '90%'}}>
@@ -195,9 +244,14 @@ class Registeration extends Component {
               <div className="formFlex">
                 <div className="checkInner">
                   <div style={{display: 'flex'}}>
-                    <Checkbox></Checkbox>
+                    <Checkbox style={{paddingLeft: '5px'}}></Checkbox>
                     <p className="checkText">By checking the following box, you agree to follow all rules and regulations outlined in the offical MLH code of conduct</p>
                   </div>
+                </div>
+              </div>
+              <div className="formFlex">
+                <div className="submitInner">
+                    <button className="applyButton">APPLY</button>
                 </div>
               </div>
             </div>
