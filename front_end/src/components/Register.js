@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component, useState } from 'react';
 import Navbar from './Navbar';
 import { connect } from 'react-redux';
 import { userPostFetch } from '../redux/actions';
 import { Row, Container, Col } from 'react-bootstrap';
 import { Animated } from 'react-animated-css';
 import { Button, Icon, Input, Checkbox } from 'antd'
+import { Toast } from 'react-bootstrap';
 import './css/Register.css'
 
 const cutieIcon = require('./assets/Icon.png');
@@ -34,7 +35,8 @@ class Registeration extends Component {
       github: '',
       resume: '',
       conduct_box: true,
-      share_box: false
+      share_box: false,
+      show: false
     }
   }
 
@@ -86,13 +88,20 @@ class Registeration extends Component {
     window.location.assign('/')
   }
 
+  toggleShow = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }));
+  }
+
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.validateForms();
+    this.toggleShow();
+    //this.validateForms();
   }
 
   render(){
@@ -251,7 +260,17 @@ class Registeration extends Component {
               </div>
               <div className="formFlex">
                 <div className="submitInner">
-                    <button className="applyButton">APPLY</button>
+                  <div className="toastStyling">
+                    <Toast show={this.state.show} onClose={this.toggleShow}>
+                      <Toast.Header>
+                        <strong style={{color: '#F6796E'}} className="mr-auto">Error</strong>
+                      </Toast.Header>
+                      <Toast.Body style={{color: '#F6796E'}}>One or more of the fields are empty or incorrect</Toast.Body>
+                    </Toast>
+                  </div>
+                  <div className="buttonStyling">
+                    <button onClick={this.handleSubmit}className="applyButton">APPLY</button>
+                  </div>
                 </div>
               </div>
             </div>
