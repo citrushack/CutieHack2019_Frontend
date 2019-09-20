@@ -70,10 +70,10 @@ class Home extends Component {
       <div>
         <div className="heroStyling">
           <Navbar />
-            <div style={{textAlign: 'center', float: 'left'}}>
+            <div className="mainHeaderContainer">
                 <h1 className="mainTitle">CUTIE HACK</h1>
-                <div style={{width: '70%', margin: 'auto', marginBottom: '16px', borderBottom: '1px solid white'}}></div>
-              <h2 className="mainSubTitle">November 9, 2019</h2>
+                <div className="mainUnderline"></div>
+              <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
             </div>
         </div>
         <ScrollableAnchor id={'section2'}>

@@ -58,8 +58,6 @@ class Login extends Component {
     if (this.state.redirectToRegister) {
       return <Redirect push to="/register" />
     }
-    console.log(this.state.email)
-
     return(
       <div className="login">
         <Navbar loginCheck={this.props.redirectToLogin}/>
