@@ -1,0 +1,102 @@
+.formText {
+  margin: 0;
+  color: #FCD139;
+  font-size: 0.8em;
+}
+
+.registerInput {
+  border: none;
+  border-bottom: 1px solid #E0E0E0;
+  background-color: transparent;
+  color: #DCDCDC;
+}
+
+.formFlex {
+  display: flex;
+  margin: auto;
+  width: 50%;
+}
+
+.firstInner {
+  margin-top: 5%;
+  width: 33%;
+}
+
+.secondInner {
+  margin-top: 5%;
+  width: 50%;
+}
+
+.profileContainer {
+  border-radius: 50px;
+  border: 2px dashed #FCD139;
+  width: 80%;
+  height: 500px;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.iconPSizing {
+  width: 100%;
+}
+
+
+.iconPContainer {
+  position: relative;
+}
+
+.innerPContainer {
+  position: absolute;
+  width: 20%;
+  right: 75%;
+  top: -25%;
+}
+
+.userInfo{
+
+    /*
+    width: 100%;
+    border: 1px solid white;
+    */
+    border: 1px solid white;
+    margin: auto;
+
+
+
+
+}
+
+
+
+
+
+.userName{
+
+color: #FFFFFF;
+position: absolute;
+right: 55%;
+top: 25%;
+
+font-style: normal;
+font-weight: 600;
+font-size: 50px;
+}
+.userEmail{
+position: absolute;
+color: #FFFFFF;
+right: 57.5%;
+top: 35%;
+font-weight: 200;
+font-size: 20px;
+
+
+}
+.applicationStatus{
+
+position: absolute;
+color: #FFFFFF;
+right: 47.5%;
+top: 50%;
+
+
+}
