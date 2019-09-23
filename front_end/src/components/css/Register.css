@@ -161,3 +161,28 @@ input:-webkit-autofill:active {
 .toastStyling {
   position: absolute;
 }
+
+@media screen and (max-width: 414px){
+.formContainer {
+
+  margin: auto;
+  border-radius: 8px;
+  padding-bottom: 3%;
+  background-color: #27384F;
+  margin-bottom: 4%;
+  width: 100%;
+}
+.registrationTitle {
+  color: #FCD139;
+  font-weight: 300;
+  margin: 0;
+  font-size: 30px;
+}
+.cutieIcon {
+  opacity: 0.15;
+  position: absolute;
+  top: 15%;
+  left: 17%;
+  display: none;
+}
+}
