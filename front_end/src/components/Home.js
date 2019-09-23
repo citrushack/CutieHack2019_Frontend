@@ -93,8 +93,8 @@ class Home extends Component {
             </div>
             <Container fluid className="noPadding">
               <Row className="noMargin">
-                <Col className="noPadding">
-                  <div className="faqBubble" style={{float: 'right'}}>
+                <Col className="noPadding" lg="6">
+                  <div className="faqBubble" >
                     <div>
                       <Arrow title={'What is a hackathon'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
                     </div>
@@ -110,8 +110,8 @@ class Home extends Component {
 
                   </div>
                 </Col>
-                <Col className="noPadding">
-                  <div className="faqBubble">
+                <Col className="noPadding" lg="6">
+                  <div className="faq2Bubble">
                     <div>
                       <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking devices!'} />
                     </div>

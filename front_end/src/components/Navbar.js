@@ -55,6 +55,7 @@ class Navbar extends Component {
     return(
       <div>
          <div className="nav" style={nav}>
+
            <button style={nav} className="buttons" onClick={this.HomeRedirect}>HOME</button>
            <a className="buttons" href='#section2'>ABOUT</a>
            <a className="buttons" href='#section3'>FAQs</a>

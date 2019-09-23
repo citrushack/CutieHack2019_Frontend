@@ -83,6 +83,14 @@
 }
 
 .faqBubble {
+/* style={{float: 'right'}} */
+   float:right;
+  width: 85%;
+  padding: 15px;
+}
+.faq2Bubble {
+/* style={{float: 'right'}} */
+   /*float:right;*/
   width: 85%;
   padding: 15px;
 }
@@ -145,4 +153,106 @@
 .footerText {
   color: white;
   font-size: 1.4em
+}
+
+@media screen and (max-width: 414px){
+.heroStyling {
+  background: url('../assets/hero.png');
+  height: 100vh;
+  width: 100vw;
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+
+.mainHeaderContainer {
+  text-align: center;
+  float: left;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+
+
+.mainTitle {
+  color: white;
+  font-weight: 900;
+  font-size: 4em;
+  margin: 0;
+  margin-top: 20%;
+  text-shadow: 2.5px 2.5px #FCD138;
+  letter-spacing: 8px;
+}
+
+.sec2Title{
+  float: center;
+  color: white;
+  font-size: 2.5em;
+}
+
+.sec3Title{
+
+  float: center;
+  color: white;
+  font-size: 2.5em;
+  padding-top: 10%;
+
+
+
+}
+
+.section2{
+
+  height: 90vh;
+  width: 100vw;
+  display: inline-block;
+  text-align: center;
+  padding-left: 25%;
+
+
+
+}
+
+.sec2Text {
+  display: inline;
+  color: white;
+  font-size: 1.18em;
+  width: 75%;
+}
+.faqBubble {
+float: none;
+margin:auto;
+  width: 85%;
+  padding: 15px;
+}
+.faq2Bubble {
+/* style={{float: 'right'}} */
+   /*float:right;*/
+   padding-top: 0;
+   float:none;
+   margin:auto;
+  width: 85%;
+  padding: 0 15px 15px 15px;
+}
+
+.sec4Title {
+
+  float: center;
+  color: white;
+  font-size: 2.5em;
+  padding-top: 35%;
+
+
+ }
+ .footerIcon {
+  color: white !important;
+  font-size: 1.75em;
+  /*padding: 20px 40px 20px 40px;*/
+  padding: 0;
+  padding: 10px 20px 10px 20px;
+}
+
+
+
+
 }
