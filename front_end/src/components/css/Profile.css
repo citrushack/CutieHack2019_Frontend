@@ -1,60 +1,61 @@
 .profileContainer {
-  border-radius: 50px;
-  border: 2px dashed #FCD139;
-  width: 80%;
-  height: 500px;
+  width: 85%;
+  height: 90vh;
+  background-color: #27384F;
   margin: auto;
-  margin-top: 10%;
+  border-radius: 6px;
 }
 
-.iconPSizing {
-  width: 100%;
+.iconProfile {
+  width: 16%;
 }
 
-
-.iconPContainer {
-  position: relative;
+.profileHeader, .profileSubHeader {
+  color: white;
+  margin-bottom: 0 !important;
+  padding-left: 4%;
 }
 
-.innerPContainer {
-  position: absolute;
-  width: 20%;
-  right: 75%;
-  top: -25%;
+.profileHeader {
+  margin-top: 2%;
+  font-weight: 300;
+  font-size: 4em;
 }
 
-.userInfo{
-    border: 1px solid white;
-    margin: auto;
+.profileSubHeader {
+  font-weight: 300;
+  font-size: 1.5em;
 }
 
-.userName{
-
-color: #FFFFFF;
-position: absolute;
-right: 55%;
-top: 25%;
-
-font-style: normal;
-font-weight: 600;
-font-size: 50px;
+.innerProfileContainer {
+  width: 95%;
+  margin: auto;
+  background-color: #415269;
+  border-radius: 8px;
+  height: 68%;
 }
-.userEmail{
-position: absolute;
-color: #FFFFFF;
-right: 57.5%;
-top: 35%;
-font-weight: 200;
-font-size: 20px;
 
-
+.innerHeaderProfile {
+  padding-top: 1%;
+  font-weight: 300;
+  color: white;
 }
-.applicationStatus{
 
-position: absolute;
-color: #FFFFFF;
-right: 47.5%;
-top: 50%;
+.profileSection, .profileSection2 {
+  font-weight: 500;
+  padding-left: 10%;
+  color: #FCD139;
+  font-size: 1.2em;
+}
 
+.profileSection2 {
+  margin-top: 4%;
+}
 
+.profileSectionText, .profileSectionText2 {
+  color: white;
+}
+
+.profileSectionText2 {
+  margin-top: 4%;
 }

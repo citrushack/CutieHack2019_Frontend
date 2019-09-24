@@ -1,61 +1,66 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Register from './Register';
+import { Row, Container, Col } from 'react-bootstrap';
 import "./css/Profile.css";
 const cutieIcon = require('./assets/Icon.png');
 
 class Profile extends Component {
+  state = {
+    school: '',
+    levelOfStudy: '',
+    major: '',
+    graduationYear: '',
+    dob: '',
+    race: '',
+    phoneNumber: '',
+    shirtSize: '',
+    linkedIn: '',
+    gitHub: '',
+    resume: ''
+  }
+
   render(){
     return(
       <div>
-      <Navbar />
-      <div className="profileContainer">
+        <div>
+          <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
+          <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+        </div>
+        <div className="profileContainer">
+          <div style={{display: 'flex', paddingLeft: '4%'}}>
+            <img className="iconProfile "src={cutieIcon}/>
+            <div style={{width: '100%'}}>
+              <p className="profileHeader">John</p>
+              <p className="profileSubHeader"> Email: jshin029@ucr.edu</p>
+            </div>
+          </div>
+          <div className="innerProfileContainer">
+          <Container fluid className="noPadding">
+            <div style={{textAlign: 'center'}}className="innerHeaderProfile">
+              <h1 className="innerHeaderProfile">APPLICATION STATUS: ACCEPTED</h1>
+            </div>
+            <Row className="noMargin">
+              <Col className="noPadding">
+                <div className="profileSection">SCHOOL</div>
+                <div className="profileSection2">LEVEL OF STUDY</div>
+                <div className="profileSection2">Major</div>
+                <div className="profileSection2">Graduation year</div>
+              </Col>
+              <Col className="noPadding">
+                <div className="profileSectionText">UCR</div>
+                <div className="profileSectionText2">UCR</div>
+                <div className="profileSectionText2">UCR</div>
+                <div className="profileSectionText2">UCR</div>
 
-
-        <div className="userInfo">
-        <div className="iconPContainer">
-          <div className="innerPContainer">
-            <img className="iconPSizing" src={cutieIcon}></img>
+              </Col>
+            </Row>
+          </Container>
           </div>
         </div>
-
-        <div className="userName"> Scotty Bear </div>
-        <div className="userEmail"> Email: sbear001@ucr.edu </div>
-        </div>
-
-        <div className="applicationStatus"> Application Status: Pending </div>
-
-
-       </div>
-
-
-
-
-
-
       </div>
     )
   }
 }
 
 export default Profile;
-
-
-
-//<div>
-//
-//        <div className="profileContainer">
-//        <div className="iconContainer">
-//          <div className="innerContainer">
-//          </div>
-//        </div>
-//
-//        </div>
-//      </div>
-
-
-//   <div className="iconContainer">
-//          <div className="innerContainer">
-//           <img className="iconSizing" src={cutieIcon}></img>
-//          </div>
-//        </div>
