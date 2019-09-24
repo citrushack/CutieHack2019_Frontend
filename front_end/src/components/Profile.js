@@ -42,10 +42,17 @@ class Profile extends Component {
             </div>
             <Row className="noMargin">
               <Col className="noPadding">
-                <div className="profileSection">SCHOOL</div>
-                <div className="profileSection2">LEVEL OF STUDY</div>
+                <div className="profileSection">School</div>
+                <div className="profileSection2">Level of Study</div>
                 <div className="profileSection2">Major</div>
                 <div className="profileSection2">Graduation year</div>
+                <div className="profileSection2">DOB</div>
+                <div className="profileSection2">Race</div>
+                <div className="profileSection2">Phone Number</div>
+                <div className="profileSection2">Shirt Size</div>
+                <div className="profileSection2">Linkedin</div>
+                <div className="profileSection2">Github</div>
+                <div className="profileSection2">Resume</div>
               </Col>
               <Col className="noPadding">
                 <div className="profileSectionText">UCR</div>

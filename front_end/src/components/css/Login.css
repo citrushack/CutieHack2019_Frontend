@@ -71,3 +71,15 @@
   padding-top: 6%;
   border-bottom: 1px solid #B8B8B8;
 }
+@media screen and (max-width: 414px){
+.loginForm {
+  width: 25vw;
+  height: 53vh;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 8px;
+  background-color: #28384F;
+  border: 1px solid #FCD139;
+  width: 90%;
+}
+}
