@@ -71,7 +71,8 @@
 
 .sec2Title, .sec3Title, .sec4Title {
   color: white;
-  font-size: 4em
+  font-weight: 400;
+  font-size: 4em;
 }
 
 .faqTitle {
@@ -116,8 +117,9 @@
 }
 
 .section4 {
+  position: relative;
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
 }
 
 .footer {
@@ -143,5 +145,36 @@
 
 .footerText {
   color: white;
-  font-size: 1.4em
+  font-size: 18px;
+}
+
+.section2img {
+  width: 40%;
+  padding-top: 10%;
+  display: block;
+  margin: auto;
+}
+
+.homeFooter {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.stats {
+  height: 55vh;
+}
+
+.statsContainer {
+  width: 33%;
+  text-align: center;
+}
+
+.statsHeader {
+  color: white;
+  font-size: 70px;
+}
+
+.statsSubHeader {
+  color: #FCD138
 }

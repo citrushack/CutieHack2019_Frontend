@@ -10,6 +10,11 @@ import { Animated } from 'react-animated-css';
 import { Pulse } from 'react-motions'
 import './css/Home.css';
 
+const cutieIcon = require('./assets/cutieHome.png');
+const cutieFooter = require('./assets/cutieFooter.png');
+const acm = require('./assets/acm.png');
+const ieee = require('./assets/ieee.png'); 
+
 class Arrow extends Component {
   constructor(props) {
     super(props);
@@ -77,6 +82,7 @@ class Home extends Component {
         <ScrollableAnchor id={'section2'}>
           <div className="section2">
             <div className="s1">
+              <img className="section2img" src={cutieIcon}></img>
             </div>
             <div className="s2">
               <h1 className="sec2Title">About Cutie Hack</h1>
@@ -128,11 +134,28 @@ class Home extends Component {
             </Container>
           </div>
         </ScrollableAnchor>
+        <div className="stats">
+          <div style={{display: 'flex'}}>
+            <div className="statsContainer">
+              <h1 className="statsHeader">36</h1>
+              <h2 className="statsSubHeader">HOURS</h2>
+            </div>
+            <div className="statsContainer">
+              <h1 className="statsHeader">350</h1>
+              <h2 className="statsSubHeader">HACKERS</h2>
+            </div>
+            <div className="statsContainer">
+              <h1 className="statsHeader">80</h1>
+              <h2 className="statsSubHeader">PROJECTS</h2>
+            </div>
+          </div>
+        </div>
         <ScrollableAnchor id={'section4'}>
           <div className="section4">
             <div style={{width: '100%', textAlign: 'center'}}>
-              <h1 className="sec4Title">Sponsors</h1>
+              <h1 className="sec4Title">Special Thanks</h1>
             </div>
+            <img className="homeFooter" src={cutieFooter}></img>
           </div>
         </ScrollableAnchor>
         <ScrollableAnchor id={'section5'}>
