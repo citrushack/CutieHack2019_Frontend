@@ -169,24 +169,25 @@
 .statsContainer {
   width: 33%;
   text-align: center;
-  -webkit-transition: width 0.3s, height 0.3s;
-   transition: width 0.3s, height 0.3s;
 }
 
-.statsContainer:hover {
-  color: red;
-}
 
 .statsHeader {
-  margin: 0;
   color: white;
   font-size: 70px;
   font-weight: 300;
-  padding-right: 6px;
+  line-height: 40px;
+  -webkit-transition: font-size 0.3s;
+  transition: font-size 0.3s;
+}
+
+.statsHeader:hover {
+  font-size: 80px;
 }
 
 .statsSubHeader {
   font-weight: 300;
+  font-size: 30px;
   letter-spacing: 3px;
   color: #FCD138
 }
@@ -202,11 +203,11 @@
 }
 
 .ieee {
-  width: 60%;
+  width: 55%;
   -webkit-transition: width 0.3s, height 0.3s;
    transition: width 0.3s, height 0.3s;
 }
 
 .ieee:hover {
-  width: 62%;
+  width: 57%;
 }

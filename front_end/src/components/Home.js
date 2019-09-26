@@ -7,7 +7,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { Row, Container, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Animated } from 'react-animated-css';
-import { Pulse } from 'react-motions'
+import { Pulse } from 'react-motions';
 import './css/Home.css';
 
 const cutieIcon = require('./assets/cutieHome.png');
@@ -71,14 +71,16 @@ class Home extends Component {
   render(){
     return(
       <div>
-        <div className="heroStyling">
-          <Navbar />
-            <div className="mainHeaderContainer">
-                <h1 className="mainTitle">CUTIE HACK</h1>
-                <div className="mainUnderline"></div>
-              <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
-            </div>
-        </div>
+        <Animated animationIn="fadeIn" isVisible={true}>
+          <div className="heroStyling">
+            <Navbar />
+              <div className="mainHeaderContainer">
+                  <h1 className="mainTitle">CUTIE HACK</h1>
+                  <div className="mainUnderline"></div>
+                <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
+              </div>
+          </div>
+        </Animated>
         <ScrollableAnchor id={'section2'}>
           <div className="section2">
             <div className="s1">
@@ -138,14 +140,17 @@ class Home extends Component {
           <div style={{display: 'flex'}}>
             <div className="statsContainer">
               <span className="statsHeader">12</span>
+              <br></br>
               <span className="statsSubHeader" style={{paddingLeft:'10px'}}>HOURS</span>
             </div>
             <div className="statsContainer">
               <span className="statsHeader">300</span>
+              <br></br>
               <span className="statsSubHeader">HACKERS</span>
             </div>
             <div className="statsContainer">
               <span className="statsHeader">75</span>
+              <br></br>
               <span className="statsSubHeader">PROJECTS</span>
             </div>
           </div>
@@ -157,10 +162,14 @@ class Home extends Component {
               <Container style={{marginTop: '60px'}}fluid className="noPadding">
                 <Row className="noMargin">
                   <Col className="noPadding">
-                    <img className="acm" src={acm}></img>
+                    <a href="https://acmucr.org/">
+                      <img className="acm" src={acm}></img>
+                    </a>
                   </Col>
                   <Col className="noPadding">
-                    <img className="ieee" src={ieee}></img>
+                    <a href="https://ieee.ee.ucr.edu/">
+                      <img className="ieee" src={ieee}></img>
+                    </a>
                   </Col>
                 </Row>
               </Container>

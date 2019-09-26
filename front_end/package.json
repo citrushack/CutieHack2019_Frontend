@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.23.2",
+    "aos": "^2.3.4",
     "react": "^16.8.6",
     "react-animated-css": "^1.2.1",
     "react-animations": "^1.0.0",
