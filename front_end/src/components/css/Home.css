@@ -119,7 +119,7 @@
 .section4 {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
 }
 
 .footer {
@@ -176,5 +176,26 @@
 }
 
 .statsSubHeader {
+  font-weight: 300;
   color: #FCD138
+}
+
+.acm {
+  width: 45%;
+  -webkit-transition: width 0.3s, height 0.3s;
+   transition: width 0.3s, height 0.3s;
+}
+
+.acm:hover {
+  width: 47%;
+}
+
+.ieee {
+  width: 60%;
+  -webkit-transition: width 0.3s, height 0.3s;
+   transition: width 0.3s, height 0.3s;
+}
+
+.ieee:hover {
+  width: 62%;
 }

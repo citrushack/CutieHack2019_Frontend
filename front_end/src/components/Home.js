@@ -13,7 +13,7 @@ import './css/Home.css';
 const cutieIcon = require('./assets/cutieHome.png');
 const cutieFooter = require('./assets/cutieFooter.png');
 const acm = require('./assets/acm.png');
-const ieee = require('./assets/ieee.png'); 
+const ieee = require('./assets/ieee.png');
 
 class Arrow extends Component {
   constructor(props) {
@@ -137,15 +137,15 @@ class Home extends Component {
         <div className="stats">
           <div style={{display: 'flex'}}>
             <div className="statsContainer">
-              <h1 className="statsHeader">36</h1>
+              <h1 className="statsHeader">12</h1>
               <h2 className="statsSubHeader">HOURS</h2>
             </div>
             <div className="statsContainer">
-              <h1 className="statsHeader">350</h1>
+              <h1 className="statsHeader">200</h1>
               <h2 className="statsSubHeader">HACKERS</h2>
             </div>
             <div className="statsContainer">
-              <h1 className="statsHeader">80</h1>
+              <h1 className="statsHeader">40</h1>
               <h2 className="statsSubHeader">PROJECTS</h2>
             </div>
           </div>
@@ -154,6 +154,16 @@ class Home extends Component {
           <div className="section4">
             <div style={{width: '100%', textAlign: 'center'}}>
               <h1 className="sec4Title">Special Thanks</h1>
+              <Container style={{marginTop: '60px'}}fluid className="noPadding">
+                <Row className="noMargin">
+                  <Col className="noPadding">
+                    <img className="acm" src={acm}></img>
+                  </Col>
+                  <Col className="noPadding">
+                    <img className="ieee" src={ieee}></img>
+                  </Col>
+                </Row>
+              </Container>
             </div>
             <img className="homeFooter" src={cutieFooter}></img>
           </div>
