@@ -9,7 +9,7 @@
 .mainHeaderContainer {
   text-align: center;
   float: left;
-  padding-top: 3%;
+  padding-top: 2%;
   padding-left: 5%;
 }
 
@@ -17,7 +17,7 @@
   width: 62.5%;
   margin: auto;
   margin-top: 4%;
-  margin-bottom: 4%;
+  margin-bottom: 3%;
   border-bottom: 1px solid white;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .section2 {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
 }
@@ -49,7 +49,7 @@
 }
 
 .sec2Text {
-  color: white;
+  color: green;
   font-size: 1.5em;
   width: 75%;
 }
@@ -87,7 +87,7 @@
 }
 
 .faqText {
-  color: white;
+  color: lightyellow;
   font-size: 1.1em;
   padding: 0;
   padding-top: 5px;
@@ -144,4 +144,242 @@
 .footerText {
   color: white;
   font-size: 1.4em
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 0px) {
+  .heroStyling, .section2, .section3, .section4 {
+    height: 50vh;
+  }
+  
+  .mainTitle {
+    color: green;
+    font-size: 1.9rem;
+  }
+
+  .mainSubTitle {
+    font-size: 1.2rem;
+  }
+
+  .sec2Text {
+    font-size: 0.6rem;
+  }
+
+  .sec2Title, .sec3Title, .sec4Title {
+    font-size: 1.52rem;
+  }
+
+  .faqTitle {
+    font-size: 1.2rem;
+  }
+
+  .faqText {
+    font-size: 0.7rem;
+  }
+
+  .arrowIcon {
+    font-size: 0.9rem;
+  }
+
+  .footerIcon {
+    font-size: 1.2rem;
+  }
+
+  .footerText {
+    font-size: 1.0rem;
+  }
+
+  .footer {
+    height: 16vh;
+  }
+}
+
+@media (min-width: 620px) {
+  .heroStyling, .section2, .section3, .section4 {
+    height: 60vh;
+  }
+
+  .mainTitle {
+    color: blue;
+    font-size: 2.5rem;
+  }
+
+  .mainSubTitle {
+    font-size: 1.6rem;
+  }
+  
+  .sec2Text {
+    font-size: 0.8rem;
+  }
+
+  .sec2Title, .sec3Title, .sec4Title {
+    font-size: 2.0rem;
+  }
+
+  .faqTitle {
+    font-size: 1.3rem;
+  }
+
+  .faqText {
+    font-size: 0.8rem;
+  }
+
+  .arrowIcon {
+    font-size: 1.0rem;
+  }
+
+  .footerIcon {
+    font-size: 1.4rem;
+  }
+
+  .footerText {
+    font-size: 1.1rem;
+  }
+
+  .footer {
+    height: 17.5vh;
+  }
+}
+
+@media (min-width: 840px) {
+  .heroStyling, .section2, .section3, .section4 {
+    height: 70vh;
+  }
+
+    .mainTitle {
+    color: purple;
+    font-size: 3.5rem;
+  }
+
+  .mainSubTitle {
+    font-size: 2.1rem;
+  }
+
+  .sec2Text {
+    font-size: 1.0rem;
+  }
+  
+  .sec2Title, .sec3Title, .sec4Title {
+    font-size: 2.8rem;
+  }
+
+  .faqTitle {
+    font-size: 1.4rem;
+  }
+
+  .faqText {
+    font-size: 0.9rem;
+  }
+
+  .arrowIcon {
+    font-size: 1.1rem;
+  }
+
+  .footerIcon {
+    font-size: 1.6rem;
+  }
+
+  .footerText {
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    height: 20.5vh;
+  }
+}
+
+@media (min-width: 980px) {
+  .heroStyling, .section2, .section3, .section4 {
+    height: 83vh;
+  }
+
+  .mainTitle {
+    color: red;
+    font-size: 4.5rem;
+  }
+
+  .mainSubTitle {
+    font-size: 2.7rem;
+  }
+
+  .sec2Text {
+    font-size: 1.2rem;
+  }
+
+  .sec2Title, .sec3Title, .sec4Title {
+    font-size: 3.6rem;
+    padding-top: 2%;
+  }
+
+  .faqTitle {
+    font-size: 1.5rem;
+  }
+
+  .faqText {
+    font-size: 1.0rem;
+  }
+
+  .arrowIcon {
+    font-size: 1.2rem;
+  }
+
+  .footerIcon {
+    font-size: 1.8rem;
+  }
+
+  .footerText {
+    font-size: 1.3rem;
+  }
+
+  .footer {
+    height: 20vh;
+  }
+}
+
+@media (min-width: 1260px) {
+  .heroStyling, .section2, .section3, .section4 {
+    height: 100vh;
+  }
+
+  .mainTitle {
+    color: lightseagreen;
+    font-size: 5.5rem;
+  }
+
+  .mainSubTitle {
+    font-size: 3.3rem;
+  }
+
+  .sec2Text {
+    font-size: 1.4rem;
+  }
+
+  .sec2Title, .sec3Title, .sec4Title {
+    font-size: 4.4rem;
+  }
+
+  .faqTitle {
+    font-size: 1.6rem;
+  }
+
+  .faqText {
+    font-size: 1.1rem;
+  }
+
+  .arrowIcon {
+    font-size: 1.3rem;
+  }
+
+  .footerIcon {
+    font-size: 2rem;
+  }
+
+  .footerText {
+    font-size: 1.4rem;
+  }
+
+  .footer {
+    height: 22vh;
+  }
 }

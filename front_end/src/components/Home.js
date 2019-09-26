@@ -22,10 +22,11 @@ class Arrow extends Component {
     this.setState(state => ({ collapse: !state.collapse }));
   }
 
-  render(){
+  render() {
     console.log(this.state.isOpen)
-    return(
+    return (
       <div>
+        <meta name="viewport" content="width=device-width" />
         <div className="flex">
           <div className="faqTitle">{this.props.title}</div>
           <Icon onClick={this.toggle} className="arrowIcon" type="down" />
@@ -64,17 +65,17 @@ class Home extends Component {
   }
 
 
-  render(){
+  render() {
     console.log(this.state.arrow1)
-    return(
+    return (
       <div>
         <div className="heroStyling">
           <Navbar />
-            <div className="mainHeaderContainer">
-                <h1 className="mainTitle">CUTIE HACK</h1>
-                <div className="mainUnderline"></div>
-              <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
-            </div>
+          <div className="mainHeaderContainer">
+            <h1 className="mainTitle">CUTIE HACK</h1>
+            <div className="mainUnderline"></div>
+            <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
+          </div>
         </div>
         <ScrollableAnchor id={'section2'}>
           <div className="section2">
@@ -88,21 +89,21 @@ class Home extends Component {
         </ScrollableAnchor>
         <ScrollableAnchor id={'section3'}>
           <div className="section3">
-            <div style={{width: '100%', textAlign: 'center'}}>
+            <div style={{ width: '100%', textAlign: 'center' }}>
               <h1 className="sec3Title">FAQs</h1>
             </div>
             <Container fluid className="noPadding">
               <Row className="noMargin">
                 <Col className="noPadding">
-                  <div className="faqBubble" style={{float: 'right'}}>
+                  <div className="faqBubble" style={{ float: 'right' }}>
                     <div>
-                      <Arrow title={'What is a hackathon'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
+                      <Arrow title={'What is a hackathon?'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
                     </div>
                     <div className="secondaryFaq">
                       <Arrow title={'Who can attend?'} body={'We welcome all undergraduate UCR students! We do, however, encourage novice and first time hackers for this event.'} />
                     </div>
                     <div className="secondaryFaq">
-                      <Arrow title={'Is there free food?'} body={'Yes! Meals, refreshments, and snacks will be provided throughout the event'} />
+                      <Arrow title={'Is there free food?'} body={'Yes! Meals, refreshments, and snacks will be provided throughout the event.'} />
                     </div>
                     <div className="secondaryFaq">
                       <Arrow title={'Do I need a team?'} body={'Teams are not required, but are recommended. Teams are capped at 4 members and you will have an opportunity to form teams at the start of the event as well.'} />
@@ -116,13 +117,13 @@ class Home extends Component {
                       <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking devices!'} />
                     </div>
                     <div className="secondaryFaq">
-                      <Arrow title={'What should I bring?'} body={'Student IDs are required. Consider brining a hacking machine, headphones, and a pillow. Feel free to bring your own parts as well but note that soldering is not allowed at CutieHack.'} />
+                      <Arrow title={'What should I bring?'} body={'Student IDs are required. Consider bringing a hacking machine, headphones, and a pillow. Feel free to bring your own parts as well but note that soldering is not allowed at CutieHack.'} />
                     </div>
                     <div className="secondaryFaq">
-                      <Arrow title={'What if I still have a question?'} body={'Email us at citrushack@gmail.com. We love answering questions'} />
+                      <Arrow title={'What if I still have a question?'} body={'Email us at citrushack@gmail.com. We love answering  questions!'} />
                     </div>
                     <div className="secondaryFaq">
-                      <Arrow title={'What if I do not know how to code'} body={"CutieHack is a beginner friendly hackathon and is open to all skill levels. During the event take the time to checkout workshops and collaborate with others"} />
+                      <Arrow title={'What if I do not know how to code?'} body={"CutieHack is a beginner friendly hackathon and is open to all skill levels. During the event, take the time to checkout workshops and collaborate with others."} />
                     </div>
                   </div>
                 </Col>
@@ -132,7 +133,7 @@ class Home extends Component {
         </ScrollableAnchor>
         <ScrollableAnchor id={'section4'}>
           <div className="section4">
-            <div style={{width: '100%', textAlign: 'center'}}>
+            <div style={{ width: '100%', textAlign: 'center' }}>
               <h1 className="sec4Title">Sponsors</h1>
             </div>
           </div>
@@ -140,17 +141,17 @@ class Home extends Component {
         <ScrollableAnchor id={'section5'}>
           <div className="footer">
             <div className="footerWrap">
-              <div style={{margin: 'auto'}}>
+              <div style={{ margin: 'auto' }}>
                 <Icon onClick={this.handleFacebook} className="footerIcon" type="facebook" />
                 <Icon onClick={this.handleMail} className="footerIcon" type="mail" />
                 <Icon onClick={this.handleTwitter} className="footerIcon" type="twitter-square" theme="filled" />
                 <Icon onClick={this.handleInstagram} className="footerIcon" type="instagram" />
               </div>
             </div>
-            <div style={{textAlign: 'center'}}>
+            <div style={{ textAlign: 'center' }}>
               <p className="footerText">Made with ♥ in Riverside, CA</p>
             </div>
-            <div style={{paddingBottom: '0.5%', textAlign: 'center'}}>
+            <div style={{ paddingBottom: '0.5%', textAlign: 'center' }}>
               <p className="footerText">© 2019 Cutie Hack</p>
             </div>
           </div>
