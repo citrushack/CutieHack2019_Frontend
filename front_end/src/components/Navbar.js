@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
+import { logoutUser } from '../redux/actions';
 import './css/Navbar.css';
 
 const Icon = require('./assets/Icon.png');
@@ -15,7 +17,6 @@ class Navbar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      Authenticated: true,
       redirectToLogin: false,
       redirectToHome: false,
       isTop: true
@@ -43,7 +44,13 @@ class Navbar extends Component {
     window.location.assign('/')
   }
 
+  handleLogout = () => {
+    localStorage.removeItem("token")
+    window.location.assign('/')
+  }
+
   render(){
+    console.log(this.state.userProfile)
     let nav;
     if (this.state.isTop){
       nav = noScroll
@@ -60,10 +67,10 @@ class Navbar extends Component {
            <a className="buttons" href='#section3'>FAQs</a>
            <a className="buttons" href='#section4'>SPONSORS</a>
            <a className="buttons" href='#section5'>CONTACT</a>
-           {this.state.Authenticated ? (
-             <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+           {this.props.currentUser.profile ? (
+             <button className="buttons" onClick={this.handleLogout}>LOGOUT</button>
            ):(
-             <button className="buttons">LOGOUT</button>
+             <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
            )}
          </div>
       </div>
@@ -71,4 +78,14 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  logoutUser: () => dispatch(logoutUser())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

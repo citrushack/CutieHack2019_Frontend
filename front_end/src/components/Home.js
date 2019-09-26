@@ -23,7 +23,6 @@ class Arrow extends Component {
   }
 
   render(){
-    console.log(this.state.isOpen)
     return(
       <div>
         <div className="flex">
@@ -65,7 +64,6 @@ class Home extends Component {
 
 
   render(){
-    console.log(this.state.arrow1)
     return(
       <div>
         <div className="heroStyling">

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { userLoginFetch } from '../redux/actions';
 import { Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
-import { Input, Icon } from 'antd';
+import { Input, Icon, Button } from 'antd';
 import './css/Login.css';
 import { Animated } from 'react-animated-css';
 
@@ -28,7 +28,6 @@ class Login extends Component {
      email: '',
      password: '',
    })
-   // window.location.assign('/')
   }
 
   handleRegister = () => {
@@ -38,7 +37,7 @@ class Login extends Component {
   }
 
   handleReset = () => {
-    fetch("http://c1078b2b.ngrok.io/api/sendResetEmail", {
+    fetch("http://2902b774.ngrok.io/api/sendResetEmail", {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -72,12 +71,12 @@ class Login extends Component {
             </div>
             <div className="loginBorder"></div>
             <div className="submitField">
-              <button onClick={this.handleSubmit} className="submitButton">LOGIN</button>
+              <Button onClick={this.handleSubmit} className="submitButton">LOGIN</Button>
             </div>
             <div className="submitField">
-              <button onClick={this.handleRegister}className="submitButton">SIGN UP</button>
+              <Button onClick={this.handleRegister} className="submitButton">SIGN UP</Button>
             </div>
-            <div onClick={this.handleReset} style={{color: 'white', width: '100%', marginTop: '6%', textAlign: 'center'}}>FORGOT PASSWORD?</div>
+            <Button onClick={this.handleReset} className="resetText">FORGOT PASSWORD?</Button>
           </div>
         </Animated>
 

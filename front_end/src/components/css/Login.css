@@ -10,13 +10,12 @@
   margin-top: 10%;
   border-radius: 8px;
   background-color: #28384F;
-  border: 1px solid #FCD139;
 }
 
 .topText {
   color: white;
   padding: 8px;
-  padding-left: 20px;
+  padding-left: 15px;
   font-size: 15px;
 }
 
@@ -26,6 +25,7 @@
 }
 
 .customInput {
+  color: white;
   width: 100%;
   border: 1px solid #E0E0E0 !important;
   border-radius: 4px;
@@ -54,10 +54,14 @@
 
 .submitButton {
   width: 100%;
-  border-radius: 35px;
-  padding: 6px;
-  color: white;
-  background-color: #28384F;
+  border-radius: 35px !important;
+  color: white !important;
+  background-color: #C99E06 !important;
+  border: none !important;
+}
+
+.submitButton:hover {
+  background-color: #FCD139 !important;
 }
 
 .loginText{
@@ -71,6 +75,20 @@
   padding-top: 6%;
   border-bottom: 1px solid #B8B8B8;
 }
+
+.resetText {
+  background-color: transparent !important;
+  border: none !important;
+  color: #B7B7B7 !important;
+  width: 100%;
+  margin-top: 6%;
+  text-align: center;
+}
+
+.resetText:hover {
+  color: white !important;
+}
+
 @media screen and (max-width: 414px){
 .loginForm {
   width: 25vw;
