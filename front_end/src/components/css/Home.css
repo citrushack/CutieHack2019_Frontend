@@ -49,7 +49,7 @@
 }
 
 .sec2Text {
-  color: green;
+  color: lightgoldenrodyellow;
   font-size: 1.5em;
   width: 75%;
 }
@@ -148,14 +148,14 @@
 
 /* MEDIA QUERIES */
 
-@media (min-width: 0px) {
+@media only screen and (min-width: 0px) {
   .heroStyling, .section2, .section3, .section4 {
     height: 50vh;
   }
   
   .mainTitle {
     color: green;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 
   .mainSubTitle {
@@ -171,7 +171,7 @@
   }
 
   .faqTitle {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
   }
 
   .faqText {

@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   padding-left: 10px;
+  padding-bottom: 300px;
 }
 
 a:hover { color:white !important;}
