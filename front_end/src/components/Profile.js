@@ -49,10 +49,6 @@ class Profile extends Component {
                 <div className="profileSection2">DOB</div>
                 <div className="profileSection2">Race</div>
                 <div className="profileSection2">Phone Number</div>
-                <div className="profileSection2">Shirt Size</div>
-                <div className="profileSection2">Linkedin</div>
-                <div className="profileSection2">Github</div>
-                <div className="profileSection2">Resume</div>
               </Col>
               <Col className="noPadding">
                 <div className="profileSectionText">UCR</div>

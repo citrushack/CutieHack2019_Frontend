@@ -85,7 +85,7 @@ class Home extends Component {
               <img className="section2img" src={cutieIcon}></img>
             </div>
             <div className="s2">
-              <h1 className="sec2Title">About Cutie Hack</h1>
+              <h1 className="sec2Title">ABOUT CUTIE HACK</h1>
               <p className="sec2Text">Cutie Hack is a beginner-friendly, 12-hour hackathon. Hosted at UC Riverside, Cutie Hack is designed to help new hackers get used to the time crunch of a hackathon environment. <br></br> <br></br>Cutie Hack invites collegiate students to UC Riverside to collaborate and innovate. Throughout the 12 hours, participants work in teams on a project, attend workshops to learn about new technologies, and network with industry partners.</p>
             </div>
           </div>
@@ -137,23 +137,23 @@ class Home extends Component {
         <div className="stats">
           <div style={{display: 'flex'}}>
             <div className="statsContainer">
-              <h1 className="statsHeader">12</h1>
-              <h2 className="statsSubHeader">HOURS</h2>
+              <span className="statsHeader">12</span>
+              <span className="statsSubHeader" style={{paddingLeft:'10px'}}>HOURS</span>
             </div>
             <div className="statsContainer">
-              <h1 className="statsHeader">200</h1>
-              <h2 className="statsSubHeader">HACKERS</h2>
+              <span className="statsHeader">300</span>
+              <span className="statsSubHeader">HACKERS</span>
             </div>
             <div className="statsContainer">
-              <h1 className="statsHeader">40</h1>
-              <h2 className="statsSubHeader">PROJECTS</h2>
+              <span className="statsHeader">75</span>
+              <span className="statsSubHeader">PROJECTS</span>
             </div>
           </div>
         </div>
         <ScrollableAnchor id={'section4'}>
           <div className="section4">
             <div style={{width: '100%', textAlign: 'center'}}>
-              <h1 className="sec4Title">Special Thanks</h1>
+              <h1 className="sec4Title">SPECIAL THANKS</h1>
               <Container style={{marginTop: '60px'}}fluid className="noPadding">
                 <Row className="noMargin">
                   <Col className="noPadding">

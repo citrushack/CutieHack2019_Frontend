@@ -270,7 +270,7 @@ class Registeration extends Component {
                     </Toast>
                   </div>
                   <div className="buttonStyling">
-                    <button onClick={this.handleSubmit} className="applyButton">APPLY</button>
+                    <Button onClick={this.handleSubmit} className="applyButton">APPLY</Button>
                   </div>
                 </div>
               </div>
