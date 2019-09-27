@@ -78,6 +78,7 @@ class Navbar extends Component {
   }
 }
 
+
 const mapStateToProps = state => {
   return {
     currentUser: state.currentUser

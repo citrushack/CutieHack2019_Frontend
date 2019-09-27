@@ -79,9 +79,14 @@ class Home extends Component {
     window.location.assign('https://www.instagram.com/citrushack_ucr/')
   }
 
+<<<<<<< HEAD
 
   render() {
     return (
+=======
+  render(){
+    return(
+>>>>>>> f9b43a55a80b122d3ac6393b24e994466fd16579
       <div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="heroStyling">
