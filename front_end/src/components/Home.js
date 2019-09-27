@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Hamburger from './Hamburger';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import { Icon } from 'antd';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -84,6 +85,7 @@ class Home extends Component {
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="heroStyling">
             <Navbar />
+            <Hamburger />
               <div className="mainHeaderContainer">
                   <h1 className="mainTitle">CUTIE HACK</h1>
                   <div data-aos="fade-right" data-aos-delay="200" className="mainUnderline"></div>

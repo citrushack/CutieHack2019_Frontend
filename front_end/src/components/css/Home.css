@@ -80,6 +80,12 @@ display: inline;
 .mobileApply {
 display: none
 }
+.mobileApply:hover{
+
+display: none;
+color: blue !important;
+
+}
 
 .noMargin {
   margin-left: 0;
@@ -254,7 +260,7 @@ display: flex;
   width: 100vw;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-top: 15%;
+  /*margin-top: 15%;*/
 }
 
 .mainHeaderContainer {
@@ -337,8 +343,8 @@ display: block;}
 .faqBubble {
 float: none;
 margin:auto;
-  width: 85%;
-  padding: 15px;
+  width: 95%;
+  /* padding: 15px; */
 }
 .faq2Bubble {
 /* style={{float: 'right'}} */
@@ -346,7 +352,7 @@ margin:auto;
    padding-top: 0;
    float:none;
    margin:auto;
-  width: 85%;
+  width: 95%;
   padding: 0 15px 15px 15px;
 }
 
