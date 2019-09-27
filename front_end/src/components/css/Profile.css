@@ -10,6 +10,48 @@
 .iconProfile {
   width: 16%;
 }
+.imgNameEmail{
+display: flex;
+padding-left: 4%;
+
+}
+.academicSchool{
+
+
+display: flex;
+
+}
+.academicSubfield{
+
+display: flex;
+padding-top: 20px;
+
+}
+.demographicHeader{
+
+display: flex;
+margin-top: 25px;
+
+}
+.demographicSubfield{
+
+display: flex;
+padding-top: 20px;
+
+}
+.profileLinkedin{
+
+display: flex;
+margin-top: 25px;
+
+}
+.linkedinSubfield{
+
+ display: flex;
+ padding-top: 20px;
+
+}
+
 
 .profileHeader, .profileSubHeader {
   color: white;
@@ -93,3 +135,112 @@
   color: white;
   font-size: 16px;
 }
+
+
+
+@media screen and (max-width: 414px){
+.profileHomebutton{
+display: none;
+
+}
+.iconProfile {
+  width: 40%;
+
+}
+.profileContainer {
+  width: 85%;
+  background-color: #27384F;
+  margin: auto;
+  border-radius: 6px;
+  margin-bottom: 80px;
+  padding-bottom: 40px;
+  text-align: center;
+
+}
+.profileHeader {
+  margin-top: -2%;
+  font-weight: 300;
+  /* font-size: 4em; */
+  font-size: 40px;
+}
+.innerHeaderProfile {
+  padding-top: 1%;
+  font-weight: 300;
+  color: white;
+  font-size: 25px;
+}
+.profileSubHeader {
+    font-weight: 300;
+    font-size: 1.5em;
+    padding-bottom: 10%;
+}
+.imgNameEmail{
+display: block;
+padding-left: 4%;
+
+}
+.academicSchool{
+
+
+display: block;
+
+}
+.academicSubfield{
+
+display: block;
+padding-top: 20px;
+
+}
+.demographicHeader{
+
+display: block;
+margin-top: 25px;
+
+}
+.demographicSubfield{
+
+display: block;
+padding-top: 20px;
+
+}
+.profileLinkedin{
+
+
+display: block;
+margin-top: 25px;
+
+
+}
+.linkedinSubfield{
+
+ display: block;
+ padding-top: 20px;
+
+}
+.sub1Header {
+    display: none;
+}
+.sub2Header {
+  width: 22%;
+  color: white;
+  padding-right: 80px;
+  font-size: 18px;
+  display: contents;
+}
+
+.sub2HeaderLower {
+  width: 42%;
+  color: white;
+  padding-right: 80px;
+  font-size: 18px;
+  padding-left: 20%;
+  text-align: center;
+  display: contents !important;
+}
+
+
+}
+
+
+
+

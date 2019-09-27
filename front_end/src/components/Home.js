@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Hamburger from './Hamburger';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import { Icon } from 'antd';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -68,10 +69,12 @@ class Home extends Component {
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="heroStyling">
             <Navbar />
+            <Hamburger />
               <div className="mainHeaderContainer">
                   <h1 className="mainTitle">CUTIE HACK</h1>
                   <div data-aos="fade-right" data-aos-delay="300" className="mainUnderline"></div>
                 <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
+                <Button className="mobileApply">hello</Button>
               </div>
           </div>
         </Animated>
@@ -81,7 +84,7 @@ class Home extends Component {
               <img data-aos="fade-up" className="section2img" src={cutieIcon}></img>
             </div>
             <div className="s2">
-              <h1 data-aos="fade-up" className="sec2Title">ABOUT CUTIE HACK</h1>
+              <h1 data-aos="fade-up" className="sec2Title"><div className="about">ABOUT</div><div className="cutieHackHeader"> CUTIE HACK</div></h1>
               <p data-aos="fade-up" className="sec2Text">Cutie Hack is a beginner-friendly, 12-hour hackathon. Hosted at UC Riverside, Cutie Hack is designed to help new hackers get used to the time crunch of a hackathon environment. <br></br> <br></br>Cutie Hack invites collegiate students to UC Riverside to collaborate and innovate. Throughout the 12 hours, participants work in teams on a project, attend workshops to learn about new technologies, and network with industry partners.</p>
             </div>
           </div>
@@ -92,9 +95,9 @@ class Home extends Component {
               <h1 className="sec3Title">FAQs</h1>
             </div>
             <Container fluid className="noPadding">
-              <Row className="noMargin">
+              <Row className="noMarginFAQ">
                 <Col className="noPadding">
-                  <div className="faqBubble" style={{float: 'right'}}>
+                  <div className="faqBubble" >
                     <div>
                       <Arrow title={'What is a hackathon'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
                     </div>
@@ -111,7 +114,7 @@ class Home extends Component {
                   </div>
                 </Col>
                 <Col className="noPadding">
-                  <div className="faqBubble">
+                  <div className="faq2Bubble">
                     <div>
                       <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking devices!'} />
                     </div>
@@ -131,7 +134,7 @@ class Home extends Component {
           </div>
         </ScrollableAnchor>
         <div className="stats">
-          <div style={{display: 'flex'}}>
+          <div id = "justForStats">
             <div className="statsContainer">
               <span data-aos="fade-down" data-aos-duration="200" className="statsHeader">12</span>
               <br></br>
@@ -154,13 +157,13 @@ class Home extends Component {
             <div style={{width: '100%', textAlign: 'center'}}>
               <h1 className="sec4Title">ORGANIZERS</h1>
               <Container style={{marginTop: '60px'}}fluid className="noPadding">
-                <Row className="noMargin">
-                  <Col className="noPadding">
+                <Row className="noMarginSponsor">
+                  <Col className="noPaddingSponsor">
                     <a href="https://acmucr.org/">
                       <img className="acm" src={acm}></img>
                     </a>
                   </Col>
-                  <Col className="noPadding">
+                  <Col className="noPaddingSponsor">
                     <a href="https://ieee.ee.ucr.edu/">
                       <img className="ieee" src={ieee}></img>
                     </a>

@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import Navbar from './Navbar';
+import Hamburger from './Hamburger'
 import { connect } from 'react-redux';
 import { userPostFetch } from '../redux/actions';
 import { Row, Container, Col } from 'react-bootstrap';
@@ -116,10 +117,11 @@ class Registeration extends Component {
   render(){
     return(
         <div className="registerParent">
-        <div style={{paddingLeft: '10px'}}>
+        <div className="registerNav"style={{paddingLeft: '10px'}}>
           <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
           <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
         </div>
+        <div className="hamburgerRegister"> <Hamburger /> </div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <form className="formContainer" onSubmit={this.handleSubmit}>
             <img className="cutieIcon" src={cutieIcon}></img>
