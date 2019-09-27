@@ -214,7 +214,7 @@
 
 /* MEDIA QUERIES */
 
-@media only screen and (min-width: 375px) {
+@media screen and (min-width: 375px) {
   .heroStyling, .section2, .section3, .section4 {
     height: 50vh;
   }
@@ -230,31 +230,50 @@
   }
 
   .sec2Text {
-    font-size: 0.6rem;
+    font-size: 8.5px;
+    width: 85%;
+  }
+  
+  .sec2Title, .sec3Title, .sec4Title {
+    font-size: 16px;
   }
 
-  .sec2Title, .sec3Title, .sec4Title {
-    font-size: 1.52rem;
+  .section2img {
+    width: 60%;
+    padding-top: 20%;
   }
 
   .faqTitle {
-    font-size: 1.0rem;
+    font-size: 13px;
+  }
+
+  .faqBubble {
+    width: 90%;
   }
 
   .faqText {
-    font-size: 0.7rem;
+    font-size: 12px;
   }
 
   .arrowIcon {
-    font-size: 0.9rem;
+    font-size: 11px;
+  }
+
+  .statsHeader {
+    font-size: 40px;
+  }
+
+  .statsSubHeader {
+    font-size: 16px;
   }
 
   .footerIcon {
-    font-size: 1.2rem;
+    font-size: 18px;
+    padding: 10px 30px 10px 30px;
   }
 
   .footerText {
-    font-size: 1.0rem;
+    font-size: 11px;
   }
 
   .footer {
