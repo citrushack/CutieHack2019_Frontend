@@ -50,7 +50,7 @@ class Navbar extends Component {
   }
 
   render(){
-    console.log(this.state.userProfile)
+    console.log(this.props.currentUser.profile)
     let nav;
     if (this.state.isTop){
       nav = noScroll

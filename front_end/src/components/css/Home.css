@@ -177,6 +177,7 @@
   font-size: 70px;
   font-weight: 300;
   line-height: 40px;
+  transition-timing-function: ease-in;  
   -webkit-transition: font-size 0.3s;
   transition: font-size 0.3s;
 }

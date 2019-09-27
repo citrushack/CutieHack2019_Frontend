@@ -24,10 +24,14 @@ class Login extends Component {
   handleSubmit = (event) => {
    event.preventDefault()
    this.props.userLoginFetch(this.state)
-   this.setState({
-     email: '',
-     password: '',
+   .then(resp => {
+     this.setState({
+       email: '',
+       password: '',
+       redirectToHome: true
+     })
    })
+   .catch(err => console.log(err))
   }
 
   handleRegister = () => {
@@ -55,7 +59,10 @@ class Login extends Component {
 
   render(){
     if (this.state.redirectToRegister) {
-      return <Redirect push to="/register" />
+      return <Redirect push to= "/register" />
+    }
+    if (this.state.redirectToHome) {
+      return <Redirect push to = "/" />
     }
     return(
       <div className="login">

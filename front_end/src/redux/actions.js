@@ -4,7 +4,7 @@ import React from 'react';
 export const userPostFetch = (user) => {
   console.log(user)
   return dispatch => {
-    return fetch("http://e562e621.ngrok.io/api/apply", {
+    return fetch("http://16026b4e.ngrok.io/api/apply", {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -47,7 +47,7 @@ export const userPostFetch = (user) => {
 
 export const userLoginFetch = (user) => {
   return dispatch => {
-    return fetch("http://bd98f396.ngrok.io/api/login", {
+    return fetch("http://16026b4e.ngrok.io/api/login", {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -62,10 +62,8 @@ export const userLoginFetch = (user) => {
         else {
           localStorage.setItem("token", resp.jwt)
           dispatch(loginUser(resp.user))
-          window.location.assign('/')
         }
       })
-      .catch(err => console.log(err))
   }
 }
 
@@ -73,7 +71,7 @@ export const getProfileFetch = () => {
   return dispatch => {
     const token = localStorage.token;
     if (token) {
-      return fetch("http://bd98f396.ngrok.io/api/validateToken", {
+      return fetch("http://16026b4e.ngrok.io/api/validateToken", {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
