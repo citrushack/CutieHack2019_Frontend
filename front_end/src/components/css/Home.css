@@ -443,3 +443,92 @@ display: block;
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1900px) {
+
+
+
+
+.mainTitle {
+  color: white;
+  font-weight: 300;
+  font-size: 120px;
+  letter-spacing: 20px;
+  margin: 0;
+  margin-top: 10%;
+}
+.sec2Title, .sec3Title, .sec4Title{
+  float: center;
+  color: white;
+  font-size: 80px;
+}
+
+.sec2Text{
+  color: white;
+  font-size: 30px;
+  font-weight: 250;
+  width: 75%;
+}
+.faqTitle {
+  color: white;
+  font-size: 30px;
+  width: 100%;
+  padding-bottom: 4px;
+}
+.footerIcon {
+  color: white !important;
+  font-size: 50px;
+  padding: 20px 40px 20px 40px;
+}
+.footerIcon:hover {
+  color: #FCD139 !important;
+}
+.footerText {
+  color: white;
+  font-size: 35px;
+}
+.statsHeader {
+  color: white;
+  font-size: 100px;
+  font-weight: 300;
+  line-height: 40px;
+  -webkit-transition: font-size 0.3s;
+  transition: font-size 0.3s;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
