@@ -1,9 +1,10 @@
 .profileContainer {
   width: 85%;
-  height: 110vh;
   background-color: #27384F;
   margin: auto;
   border-radius: 6px;
+  margin-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .iconProfile {
@@ -33,6 +34,7 @@
   background-color: #415269;
   border-radius: 8px;
   height: 68%;
+  padding-bottom: 20px;
 }
 
 .innerHeaderProfile {
@@ -58,4 +60,36 @@
 
 .profileSectionText2 {
   margin-top: 4%;
+}
+
+.profileMain {
+  padding-left: 30px;
+}
+
+.sub1Header {
+  text-align: center;
+  width: 20%;
+  color: #FCD139;
+  font-size: 18px;
+}
+
+.sub2Header {
+  width: 22%;
+  color: white;
+  padding-right: 80px;
+  font-size: 18px;
+}
+
+.sub2HeaderLower {
+  width: 42%;
+  color: white;
+  padding-right: 80px;
+  font-size: 18px;
+  padding-left: 20%;
+}
+
+.sub3Header {
+  font-weight: 150;
+  color: white;
+  font-size: 16px;
 }

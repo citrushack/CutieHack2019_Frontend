@@ -78,7 +78,6 @@ class Home extends Component {
     window.location.assign('https://www.instagram.com/citrushack_ucr/')
   }
 
-
   render(){
     return(
       <div>
