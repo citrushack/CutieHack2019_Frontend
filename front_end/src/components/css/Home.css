@@ -279,6 +279,22 @@
   .footer {
     height: 16vh;
   }
+
+  .acm {
+    width: 50%;
+  }
+
+  .acm:hover {
+    width: 52%;
+  }
+
+  .ieee {
+    width: 60%;
+  }
+
+  .ieee:hover {
+    width: 62%;
+  }
 }
 
 @media (min-width: 768px) {
