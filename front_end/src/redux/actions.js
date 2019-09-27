@@ -2,8 +2,9 @@ import { Redirect } from 'react-router-dom';
 import React from 'react';
 
 export const userPostFetch = (user) => {
+  console.log(user)
   return dispatch => {
-    return fetch("http://b0020483.ngrok.io/apply/", {
+    return fetch("http://e562e621.ngrok.io/api/apply", {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -19,25 +20,24 @@ export const userPostFetch = (user) => {
             "graduation_year": user.graduation_year,
             "major": user.major,
             "gender": user.gender,
-            "gender_other": user.gender_other,
             "date_of_birth": user.date_of_birth,
-            "race": user.race,
-            "race_other": user.race_other,
+            "ethnicity": user.ethnicity,
             "phone_number": user.phone_number,
-            "shirt_size": user.shirt_size,
             "dietary_restrictions": user.dietary_restrictions,
-            "linkedin": "",
-            "github":"",
-            "resume":"",
-            "conduct_box":"True",
-            "share_box":"True"
+            "linkedin": user.linkedin,
+            "github": user.github,
+            "resume": user.resume,
+            "conduct_box": user.conduct_box,
+            "share_box": user.share_box
         }
       }),
     })
       .then(resp => resp.json())
       .then(resp => {
         if (resp.message) {
-        } else {
+          console.log(resp)
+        }
+        else {
           console.log(resp)
         }
       })
@@ -47,7 +47,7 @@ export const userPostFetch = (user) => {
 
 export const userLoginFetch = (user) => {
   return dispatch => {
-    return fetch("http://c1078b2b.ngrok.io/api/login", {
+    return fetch("http://d79133b6.ngrok.io/api/login", {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -57,11 +57,13 @@ export const userLoginFetch = (user) => {
       .then(resp => resp.json())
       .then(resp => {
         if (resp.message) {
-        } else {
+          console.log(resp.message)
+        }
+        else {
           console.log(resp.jwt)
           localStorage.setItem("token", resp.jwt)
           dispatch(loginUser(resp.user))
-          return <Redirect to={{pathname: '/home'}} />
+          window.location.assign('/')
         }
       })
       .catch(err => console.log(err))
@@ -72,7 +74,7 @@ export const getProfileFetch = () => {
   return dispatch => {
     const token = localStorage.token;
     if (token) {
-      return fetch("http://85318eb5.ngrok.io/api/validateToken", {
+      return fetch("http://d79133b6.ngrok.io/api/validateToken", {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
@@ -86,7 +88,6 @@ export const getProfileFetch = () => {
             // If this happens, you may want to remove the invalid token.
             localStorage.removeItem("token")
           } else {
-            console.log(resp)
             dispatch(loginUser(resp.user))
           }
         })
@@ -96,6 +97,10 @@ export const getProfileFetch = () => {
 }
 
 const loginUser = (userObj) => ({
-    type: 'LOGIN_USER',
-    payload: userObj
+  type: 'LOGIN_USER',
+  payload: userObj
+})
+
+export const logoutUser = () => ({
+  type: 'LOGOUT_USER'
 })

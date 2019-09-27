@@ -14,26 +14,23 @@ class Registeration extends Component {
   constructor(props){
     super(props)
     this.state = {
-      email: '',
-      password1: '',
-      password2: '',
-      first_name: '',
-      last_name: '',
-      school: '',
-      level_of_study: '',
-      graduation_year: '',
-      major: '',
-      gender: '',
-      gender_other: '',
-      date_of_birth: '',
-      race: '',
-      race_other: '',
-      phone_number: '',
-      shirt_size: '',
-      dietary_restrictions: '',
-      linkedin: '',
-      github: '',
-      resume: '',
+      email: "",
+      password1: "",
+      password2: "",
+      first_name: "",
+      last_name: "",
+      school: "",
+      level_of_study: "",
+      graduation_year: "",
+      major: "",
+      gender: "",
+      date_of_birth: "",
+      ethinicity: "",
+      phone_number: "",
+      dietary_restrictions: "",
+      linkedin: "",
+      github: "",
+      resume: "",
       conduct_box: false,
       share_box: false,
       show: false
@@ -43,9 +40,8 @@ class Registeration extends Component {
   validateForms = () => {
     let temp1 = this.state.password1;
     let temp2 = this.state.password2;
-    let pwdError, firstNameError, lastNameError, conductError, emailError = false;
+    let pwdError, firstNameError, lastNameError, conductError = false;
     let formValidation = true;
-    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (temp1.length === temp2.length){
       for (let i = 0; i < temp1.length; ++i){
@@ -71,11 +67,8 @@ class Registeration extends Component {
       conductError = true;
       formValidation = false;
     }
-    if (re.test(this.state.email) === false){
-      emailError = true;
-      formValidation = false;
-    }
     if (formValidation){
+      console.log("were here")
       this.props.userPostFetch(this.state)
     }
     else {
@@ -121,10 +114,9 @@ class Registeration extends Component {
   }
 
   render(){
-    console.log(this.state.conduct_box)
     return(
         <div className="registerParent">
-        <div>
+        <div style={{paddingLeft: '10px'}}>
           <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
           <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
         </div>
@@ -139,19 +131,19 @@ class Registeration extends Component {
                 <div className="firstInner">
                   <p className="formText">EMAIL *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Email" prefix={<Icon type="mail" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email" prefix={<Icon type="mail" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
                 <div className="firstInner">
                   <p className="formText">PASSWORD *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Password" prefix={<Icon type="lock" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" type="password" name="password1" value={this.state.password1} onChange={this.handleChange} placeholder="Password" prefix={<Icon type="lock" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
                 <div className="firstInner">
                   <p className="formText">PASSWORD2 *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Repeat Password" prefix={<Icon type="lock" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" type="password" name="password2" value={this.state.password2} onChange={this.handleChange} placeholder="Repeat Password" prefix={<Icon type="lock" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
               </div>
@@ -159,13 +151,13 @@ class Registeration extends Component {
                 <div className="secondInner">
                   <p className="formText">FIRST NAME *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="First name" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" name="first_name" value={this.state.first_name} onChange={this.handleChange} placeholder="First name" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
                 <div className="secondInner">
                   <p className="formText">LAST NAME *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Last name" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" name="last_name" value={this.state.last_name} onChange={this.handleChange} placeholder="Last name" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
               </div>
@@ -173,13 +165,13 @@ class Registeration extends Component {
                 <div className="secondInner">
                   <p className="formText">SCHOOL *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="School" prefix={<Icon type="sort-ascending" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" name="school" value={this.state.school} onChange={this.handleChange} placeholder="School" prefix={<Icon type="sort-ascending" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
                 <div className="secondInner">
                   <p className="formText">LEVEL OF STUDY *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Level of study" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" name="level_of_study" value={this.state.level_of_study} onChange={this.handleChange} placeholder="Level of study" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
               </div>
@@ -187,13 +179,13 @@ class Registeration extends Component {
                 <div className="secondInner">
                   <p className="formText">GRADUATION YEAR *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Graduation year" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" name="graduation_year" value={this.state.graduation_year} onChange={this.handleChange} placeholder="Graduation year" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
                 <div className="secondInner">
                   <p className="formText">MAJOR *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Major" prefix={<Icon type="idcard" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" name="major" value={this.state.major} onChange={this.handleChange} placeholder="Major" prefix={<Icon type="idcard" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
               </div>
@@ -201,13 +193,13 @@ class Registeration extends Component {
                 <div className="secondInner">
                   <p className="formText">GENDER *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Gender" prefix={<Icon type="team" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" name="gender" value={this.state.gender} onChange={this.handleChange} placeholder="Gender" prefix={<Icon type="team" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
                 <div className="secondInner">
-                  <p className="formText">GENDER OTHER *</p>
+                  <p className="formText">DIETARY RESTRICTIONS *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Gender other"  prefix={<Icon type="team" style={{color: 'rgba(255,255,255)'}} />}/>
+                    <Input className="antInputStyling" name="dietary_restrictions" value={this.state.dietary_restrictions} onChange={this.handleChange} placeholder="Dietary restrictions"  prefix={<Icon type="apple" style={{color: 'rgba(255,255,255)'}} />}/>
                   </div>
                 </div>
               </div>
@@ -215,55 +207,47 @@ class Registeration extends Component {
                 <div className="secondInner">
                   <p className="formText">DATE OF BIRTH *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Date of Birth" prefix={<Icon type="calendar" style={{color: 'rgba(255,255,255)' }} />}/>
+                    <Input className="antInputStyling" name="date_of_birth" value={this.state.date_of_birth} onChange={this.handleChange} placeholder="Date of Birth" prefix={<Icon type="calendar" style={{color: 'rgba(255,255,255)' }} />}/>
                   </div>
                 </div>
                 <div className="secondInner">
-                  <p className="formText">RACE *</p>
+                  <p className="formText">ETHNICITY *</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Race" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)' }} />}/>
+                    <Input className="antInputStyling" name="ethnicity" value={this.state.ethnicity} onChange={this.handleChange} placeholder="Ethnicity" prefix={<Icon type="user" style={{color: 'rgba(255,255,255)' }} />}/>
                   </div>
                 </div>
-              </div>
-              <div className="formFlex">
-                <div className="secondInner">
-                  <p className="formText">LINKEDIN</p>
-                  <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="LinkedIn" prefix={<Icon type="linkedin" style={{color: 'rgba(255,255,255)' }} />}/>
-                  </div>
-                </div>
-                <div className="secondInner">
-                  <p className="formText">GITHUB</p>
-                  <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Github" prefix={<Icon type="github" style={{color: 'rgba(255,255,255)' }} />}/>
-                  </div>
-                </div>
-                <div className="secondInner">
-                  <p className="formText">LINK TO RESUME</p>
-                  <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" onChange={this.handleChange} placeholder="Link to resume" prefix={<Icon type="paper-clip" style={{color: 'rgba(255,255,255)' }} />}/>
-                  </div>
-                </div>
-              </div>
-              <div className="formFlex">
-                <div className="checkInner">
-                  <div style={{display: 'flex'}}>
-                    <Checkbox style={{marginTop: '10px', paddingLeft: '5px'}} check={this.state.share_box} onChange={this.handleChange}></Checkbox>
-                    <p className="checkText">I authorize you to share my application/registration information for event adminstration, ranking, MLH adminstration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the MLH Privacy Policy.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="formFlex">
                 <div className="secondInner">
                   <p className="formText">PHONE NUMBER *</p>
                   <div style={{width: '90%'}}>
                     <Input className="antInputStyling" placeholder="Phone Number" prefix={<Icon type="phone" style={{color: 'rgba(255,255,255)' }} />}/>
                   </div>
                 </div>
-                <div className="secondInner">
-                  <p className="formText">SHIRT SIZE *</p>
+              </div>
+              <div className="formFlex">
+                <div className="checkInner">
+                  <div style={{display: 'flex'}}>
+                    <Checkbox style={{marginTop: '10px', paddingLeft: '5px'}} onChange={this.handleShare}></Checkbox>
+                    <p className="checkText">I authorize you to share my application/registration information for event adminstration, ranking, MLH adminstration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the MLH Privacy Policy.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="formFlex">
+                <div className="secondInner2">
+                  <p className="formText">LINKEDIN</p>
                   <div style={{width: '90%'}}>
-                    <Input className="antInputStyling" placeholder="Shirt Size" prefix={<Icon type="skin" style={{color: 'rgba(255,255,255)' }} />}/>
+                    <Input className="antInputStyling" name="linkedin" value={this.state.linkedin} onChange={this.handleChange} placeholder="LinkedIn" prefix={<Icon type="linkedin" style={{color: 'rgba(255,255,255)' }} />}/>
+                  </div>
+                </div>
+                <div className="secondInner2">
+                  <p className="formText">GITHUB</p>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" name="github" value={this.state.github} onChange={this.handleChange} placeholder="Github" prefix={<Icon type="github" style={{color: 'rgba(255,255,255)' }} />}/>
+                  </div>
+                </div>
+                <div className="secondInner2">
+                  <p className="formText">LINK TO RESUME</p>
+                  <div style={{width: '90%'}}>
+                    <Input className="antInputStyling" name="resume" value={this.state.resume} onChange={this.handleChange} placeholder="Link to resume" prefix={<Icon type="paper-clip" style={{color: 'rgba(255,255,255)' }} />}/>
                   </div>
                 </div>
               </div>
@@ -286,7 +270,7 @@ class Registeration extends Component {
                     </Toast>
                   </div>
                   <div className="buttonStyling">
-                    <button onClick={this.handleSubmit}className="applyButton">APPLY</button>
+                    <Button onClick={this.handleSubmit} className="applyButton">APPLY</Button>
                   </div>
                 </div>
               </div>

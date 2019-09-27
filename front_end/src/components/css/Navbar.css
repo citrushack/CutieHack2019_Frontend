@@ -4,7 +4,6 @@
   position: fixed;
   top: 0;
   padding-left: 10px;
-  padding-bottom: 300px;
 }
 
 a:hover { color:white !important;}
@@ -37,3 +36,15 @@ a:hover { color:white !important;}
   left: 0;
 }
 button:focus {outline:0;}
+
+@media only screen and (min-width: 600px) {
+  .buttons {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .buttons {
+    font-size: 20px;
+  }
+}

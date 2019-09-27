@@ -53,6 +53,11 @@
   width: 50%;
 }
 
+.secondInner2 {
+  margin-top: 3%;
+  width: 50%;
+}
+
 .checkInner {
   margin-top: 5%;
   width: 100%;
@@ -140,16 +145,15 @@ input:-webkit-autofill:active {
 }
 
 .applyButton {
-  padding: 10px 50px 10px 50px;
-  border: 2px solid white;
-  border-radius: 6px;
-  background-color: #475768;
-  color: white;
+  border: 2px solid white !important;
+  border-radius: 6px !important;
+  background-color: #475768 !important;
+  color: white !important;
 }
 
 .applyButton:hover {
-  border: none;
-  background-color: #909090;
+  border: none !important;
+  background-color: #909090 !important;
   border: 2px solid white;
 }
 

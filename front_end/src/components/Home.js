@@ -7,12 +7,19 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { Row, Container, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Animated } from 'react-animated-css';
-import { Pulse } from 'react-motions'
+import { Pulse } from 'react-motions';
+import AOS from 'aos';
 import './css/Home.css';
 
+const cutieIcon = require('./assets/cutieHome.png');
+const cutieFooter = require('./assets/cutieFooter.png');
+const acm = require('./assets/acm.png');
+const ieee = require('./assets/ieee.png');
+
 class Arrow extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
+    AOS.init();
     this.state = {
       collapse: false
     };
@@ -23,7 +30,6 @@ class Arrow extends Component {
   }
 
   render() {
-    console.log(this.state.isOpen)
     return (
       <div>
         <meta name="viewport" content="width=device-width" />
@@ -41,11 +47,20 @@ class Arrow extends Component {
   }
 }
 
-const Hero = require('./assets/hero.png');
-
 class Home extends Component {
-  state = {
-    auth: false
+
+  constructor(props, context) {
+    super(props, context);
+    AOS.init({
+      once: true,
+    });
+    this.state = {
+      auth: false
+    };
+  }
+
+  componentWillReceiveProps() {
+    AOS.refresh();
   }
 
   handleFacebook = () => {
@@ -66,24 +81,26 @@ class Home extends Component {
 
 
   render() {
-    console.log(this.state.arrow1)
     return (
       <div>
-        <div className="heroStyling">
-          <Navbar />
-          <div className="mainHeaderContainer">
-            <h1 className="mainTitle">CUTIE HACK</h1>
-            <div className="mainUnderline"></div>
-            <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
+        <Animated animationIn="fadeIn" isVisible={true}>
+          <div className="heroStyling">
+            <Navbar />
+            <div className="mainHeaderContainer">
+              <h1 className="mainTitle">CUTIE HACK</h1>
+              <div data-aos="fade-right" data-aos-delay="200" className="mainUnderline"></div>
+              <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
+            </div>
           </div>
-        </div>
+        </Animated>
         <ScrollableAnchor id={'section2'}>
           <div className="section2">
             <div className="s1">
+              <img data-aos="fade-up" className="section2img" src={cutieIcon}></img>
             </div>
             <div className="s2">
-              <h1 className="sec2Title">About Cutie Hack</h1>
-              <p className="sec2Text">Cutie Hack is a beginner-friendly, 12-hour hackathon. Hosted at UC Riverside, Cutie Hack is designed to help new hackers get used to the time crunch of a hackathon environment. <br></br> <br></br>Cutie Hack invites collegiate students to UC Riverside to collaborate and innovate. Throughout the 12 hours, participants work in teams on a project, attend workshops to learn about new technologies, and network with industry partners.</p>
+              <h1 data-aos="fade-up" className="sec2Title">ABOUT CUTIE HACK</h1>
+              <p data-aos="fade-up" className="sec2Text">Cutie Hack is a beginner-friendly, 12-hour hackathon. Hosted at UC Riverside, Cutie Hack is designed to help new hackers get used to the time crunch of a hackathon environment. <br></br> <br></br>Cutie Hack invites collegiate students to UC Riverside to collaborate and innovate. Throughout the 12 hours, participants work in teams on a project, attend workshops to learn about new technologies, and network with industry partners.</p>
             </div>
           </div>
         </ScrollableAnchor>
@@ -131,11 +148,45 @@ class Home extends Component {
             </Container>
           </div>
         </ScrollableAnchor>
+        <div className="stats">
+          <div style={{ display: 'flex' }}>
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" className="statsHeader">12</span>
+              <br></br>
+              <span className="statsSubHeader" style={{ paddingLeft: '10px' }}>HOURS</span>
+            </div>
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="200" className="statsHeader">300</span>
+              <br></br>
+              <span className="statsSubHeader">HACKERS</span>
+            </div>
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="400" className="statsHeader">75</span>
+              <br></br>
+              <span className="statsSubHeader">PROJECTS</span>
+            </div>
+          </div>
+        </div>
         <ScrollableAnchor id={'section4'}>
           <div className="section4">
             <div style={{ width: '100%', textAlign: 'center' }}>
-              <h1 className="sec4Title">Sponsors</h1>
+              <h1 className="sec4Title">SPECIAL THANKS</h1>
+              <Container style={{ marginTop: '60px' }} fluid className="noPadding">
+                <Row className="noMargin">
+                  <Col className="noPadding">
+                    <a href="https://acmucr.org/">
+                      <img className="acm" src={acm}></img>
+                    </a>
+                  </Col>
+                  <Col className="noPadding">
+                    <a href="https://ieee.ee.ucr.edu/">
+                      <img className="ieee" src={ieee}></img>
+                    </a>
+                  </Col>
+                </Row>
+              </Container>
             </div>
+            <img className="homeFooter" src={cutieFooter}></img>
           </div>
         </ScrollableAnchor>
         <ScrollableAnchor id={'section5'}>
