@@ -47,7 +47,15 @@
   width: 50vw;
   padding-top: 6%;
 }
+.about{
 
+display: inline;
+
+}
+.cutieHackHeader{
+display: inline;
+
+}
 .sec2Text {
   color: white;
   font-size: 1.5em;
@@ -64,8 +72,24 @@
   padding-left: 0;
   padding-right: 0;
 }
+.noPaddingSponsor {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mobileApply {
+display: none
+}
 
 .noMargin {
+  margin-left: 0;
+  margin-right: 0;
+}
+.noMarginFAQ {
+  margin-left: 0;
+  margin-right: 0;
+}
+.noMarginSponsor {
   margin-left: 0;
   margin-right: 0;
 }
@@ -85,6 +109,11 @@
 }
 
 .faqBubble {
+  float: right;
+  width: 85%;
+  padding: 15px;
+}
+.faq2Bubble {
   width: 85%;
   padding: 15px;
 }
@@ -166,6 +195,13 @@
   height: 55vh;
 }
 
+#justForStats{
+
+display: flex;
+
+
+}
+
 .statsContainer {
   width: 33%;
   text-align: center;
@@ -210,4 +246,194 @@
 
 .ieee:hover {
   width: 57%;
+}
+@media screen and (max-width: 414px){
+.heroStyling {
+  background: url('../assets/hero.png');
+  height: 100vh;
+  width: 100vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 15%;
+}
+
+.mainHeaderContainer {
+  text-align: center;
+  float: left;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+
+.mainUnderline {
+  width: 70%;
+  margin: auto;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  border-bottom: 1px solid white;
+}
+
+.mainTitle {
+  color: white;
+  font-weight: 300;
+  font-size: 5em;
+  letter-spacing: 20px;
+  margin: 0;
+  margin-top: 60%;
+}
+
+.mainSubTitle {
+  color: white;
+  font-weight: 300;
+  font-size: 1.8em;
+  letter-spacing: 1px;
+}
+
+.sec2Title{
+  float: center;
+  color: white;
+  font-size: 2.5em;
+}
+
+.sec3Title{
+
+  float: center;
+  color: white;
+  font-size: 2.5em;
+  padding-top: 10%;
+
+
+
+}
+.section2img {
+display: none;
+}
+.s1 {
+display: none;
+}
+
+.s2 {
+width: 100vw;}
+.section2{
+  height: 90vh;
+  width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+
+
+
+}
+
+.mobileApply {
+display: block;}
+
+.sec2Text {
+  display: inline;
+  color: white;
+  font-size: 1.18em;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+.faqBubble {
+float: none;
+margin:auto;
+  width: 85%;
+  padding: 15px;
+}
+.faq2Bubble {
+/* style={{float: 'right'}} */
+   /*float:right;*/
+   padding-top: 0;
+   float:none;
+   margin:auto;
+  width: 85%;
+  padding: 0 15px 15px 15px;
+}
+
+.sec4Title {
+
+  float: center;
+  color: white;
+  font-size: 2.5em;
+  padding-top: 35%;
+
+
+ }
+ .footerIcon {
+  color: white !important;
+  font-size: 1.75em;
+  /*padding: 20px 40px 20px 40px;*/
+  padding: 0;
+  padding: 10px 20px 10px 20px;
+}
+.stats {
+  height: 55vh;
+
+    margin-top: 60%;
+    text-align: center;
+}
+#justForStats{
+
+    display: inline-block;
+
+
+}
+
+.statsContainer {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 25%;
+}
+
+
+.statsHeader {
+  color: white;
+  font-size: 70px;
+  font-weight: 300;
+  line-height: 40px;
+  -webkit-transition: font-size 0.3s;
+  transition: font-size 0.3s;
+}
+
+.statsHeader:hover {
+  font-size: 80px;
+}
+
+.statsSubHeader {
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #FCD138
+}
+
+.noMarginFAQ {
+  margin-left: 0;
+  margin-right: 0;
+  display: grid;
+}
+
+
+.noMarginSponsor {
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+}
+.noPaddingSponsor {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 20%;
+}
+
+.about{
+
+display: block;
+
+}
+.cutieHackHeader{
+
+
+}
+
+
+
 }
