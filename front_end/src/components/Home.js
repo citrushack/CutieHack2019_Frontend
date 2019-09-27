@@ -62,22 +62,6 @@ class Home extends Component {
     AOS.refresh();
   }
 
-  handleFacebook = () => {
-    window.location.assign('https://www.facebook.com/cutiehack/')
-  }
-
-  handleMail = () => {
-    window.location.assign('https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=citrushack@gmail.com')
-  }
-
-  handleTwitter = () => {
-    window.location.assign('https://twitter.com/citrushack')
-  }
-
-  handleInstagram = () => {
-    window.location.assign('https://www.instagram.com/citrushack_ucr/')
-  }
-
   render(){
     return(
       <div>
@@ -86,7 +70,7 @@ class Home extends Component {
             <Navbar />
               <div className="mainHeaderContainer">
                   <h1 className="mainTitle">CUTIE HACK</h1>
-                  <div data-aos="fade-right" data-aos-delay="200" className="mainUnderline"></div>
+                  <div data-aos="fade-right" data-aos-delay="300" className="mainUnderline"></div>
                 <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
               </div>
           </div>
@@ -168,7 +152,7 @@ class Home extends Component {
         <ScrollableAnchor id={'section4'}>
           <div className="section4">
             <div style={{width: '100%', textAlign: 'center'}}>
-              <h1 className="sec4Title">SPECIAL THANKS</h1>
+              <h1 className="sec4Title">ORGANIZERS</h1>
               <Container style={{marginTop: '60px'}}fluid className="noPadding">
                 <Row className="noMargin">
                   <Col className="noPadding">
@@ -191,10 +175,10 @@ class Home extends Component {
           <div className="footer">
             <div className="footerWrap">
               <div style={{margin: 'auto'}}>
-                <Icon onClick={this.handleFacebook} className="footerIcon" type="facebook" />
-                <Icon onClick={this.handleMail} className="footerIcon" type="mail" />
-                <Icon onClick={this.handleTwitter} className="footerIcon" type="twitter-square" theme="filled" />
-                <Icon onClick={this.handleInstagram} className="footerIcon" type="instagram" />
+                <a href="https://www.facebook.com/cutiehack/"><Icon className="footerIcon" type="facebook" /></a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=citrushack@gmail.com'"><Icon className="footerIcon" type="mail" /></a>
+                <a href="https://twitter.com/citrushack"><Icon className="footerIcon" type="twitter-square" theme="filled" /></a>
+                <a href="https://www.instagram.com/citrushack_ucr/"><Icon className="footerIcon" type="instagram" /></a>
               </div>
             </div>
             <div style={{textAlign: 'center'}}>

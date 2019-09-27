@@ -65,7 +65,7 @@ class Navbar extends Component {
            <button style={nav} className="buttons" onClick={this.HomeRedirect}>HOME</button>
            <a className="buttons" href='#section2'>ABOUT</a>
            <a className="buttons" href='#section3'>FAQs</a>
-           <a className="buttons" href='#section4'>SPONSORS</a>
+           <a className="buttons" href='#section4'>ORGANIZERS</a>
            <a className="buttons" href='#section5'>CONTACT</a>
            {this.props.currentUser.profile ? (
              <button className="buttons" onClick={this.handleLogout}>LOGOUT</button>
