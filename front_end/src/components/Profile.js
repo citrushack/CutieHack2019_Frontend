@@ -26,7 +26,6 @@ class Profile extends Component {
   }
 
   render(){
-    console.log(store.getState())
     return(
       <div>
         <div>
