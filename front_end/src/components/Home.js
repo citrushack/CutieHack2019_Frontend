@@ -66,7 +66,21 @@ class Home extends Component {
 
   handleClick = () => {
     this.setState({
-      redirectRegister: true
+      redirectRegister: true,
+      redirectHome: false,
+      redirectLogin: false
+    })
+  }
+
+  HomeRedirect = () => {
+    this.setState({
+      redirectHome: true
+    })
+  }
+
+  LoginRedirect = () => {
+    this.setState({
+      redirectLogin: true
     })
   }
 
@@ -74,11 +88,17 @@ class Home extends Component {
     if (this.state.redirectRegister){
       return <Redirect push to= "/register" />
     }
+    if (this.state.redirectHome){
+      return <Redirect push to="/" />
+    }
+    if (this.state.redirectLogin){
+      return <Redirect push to="/login" />
+    }
     return(
       <div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="heroStyling">
-            <div className="navbarHome"><Navbar /> </div>
+            <div className="navbarHome"><Navbar /></div>
             <div className="homeNav"style={{paddingLeft: '10px'}}>
             <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
             <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>

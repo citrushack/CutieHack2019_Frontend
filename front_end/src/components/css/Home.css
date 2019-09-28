@@ -250,15 +250,20 @@ display: flex;
   width: 57%;
 }
 @media screen and (max-width: 414px){
-.homeNav{display: block; }
-.navbarHome{display: none;}
+.homeNav{
+  display: block;
+}
+
+.navbarHome{
+  display: none;
+}
+
 .heroStyling {
   background: url('../assets/hero.png');
   height: 100vh;
   width: 100vw;
   background-size: contain;
   background-repeat: no-repeat;
-  /*margin-top: 15%;*/
 }
 
 .mainHeaderContainer {
@@ -307,7 +312,7 @@ display: flex;
 }
 
 .s1 {
-display: none;
+  display: none;
 }
 
 .s2 {
@@ -324,6 +329,7 @@ display: none;
 .mobileApply {
   display: block;
   margin: auto;
+  margin-top: 30px;
   width: 75%;
   border-radius: 35px !important;
   color: white !important;
@@ -425,25 +431,7 @@ display: none;
 }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (min-width: 1900px) {
-
-
-
-
 .mainTitle {
   color: white;
   font-weight: 300;
@@ -452,6 +440,7 @@ display: none;
   margin: 0;
   margin-top: 10%;
 }
+
 .sec2Title, .sec3Title, .sec4Title{
   float: center;
   color: white;
@@ -464,6 +453,7 @@ display: none;
   font-weight: 250;
   width: 75%;
 }
+
 .faqTitle {
   color: white;
   font-size: 30px;

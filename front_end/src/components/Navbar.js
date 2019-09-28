@@ -37,6 +37,7 @@ class Navbar extends Component {
   }
 
   LoginRedirect = () => {
+    console.log("hello")
     window.location.assign('/login')
   }
 
