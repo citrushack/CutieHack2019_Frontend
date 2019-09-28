@@ -334,7 +334,14 @@ width: 100vw;}
 }
 
 .mobileApply {
-display: block;}
+display: inline;
+  width: 75%;
+ border-radius: 35px !important;
+  color: white !important;
+  background-color: #C99E06 !important;
+  border: none !important;
+
+}
 
 .sec2Text {
   display: inline;
