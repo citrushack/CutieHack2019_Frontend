@@ -63,12 +63,22 @@ class Home extends Component {
     AOS.refresh();
   }
 
+  LoginRedirect = () => {
+    window.location.assign('/login')
+  }
+
+  HomeRedirect = () => {
+    window.location.assign('/')
+  }
   render(){
     return(
       <div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="heroStyling">
-            <Navbar />
+          <div className="homeNav"style={{paddingLeft: '10px'}}>
+          <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
+          <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+        </div>
             <Hamburger />
               <div className="mainHeaderContainer">
                   <h1 className="mainTitle">CUTIE HACK</h1>
@@ -84,7 +94,7 @@ class Home extends Component {
               <img data-aos="fade-up" className="section2img" src={cutieIcon}></img>
             </div>
             <div className="s2">
-              <h1 data-aos="fade-up" className="sec2Title">ABOUT CUTIE HACK</h1>
+              <h1 data-aos="fade-up" className="sec2Title"><div className="about">ABOUT</div> <div className="cutieHackHeader">CUTIE HACK</div></h1>
               <p data-aos="fade-up" className="sec2Text">Cutie Hack is a 12 hour hackathon hosted at UC Riverside designed for beginners. The hackathon invites students in the Riverside area to collaborate and innovate on projects. We will also be hosting several workshops to enable beginners to learn the skills they need to create a project.  <br></br> <br></br> This year, Cutie Hack is proud to announce that we will be accepting high school students as well!</p>
             </div>
           </div>

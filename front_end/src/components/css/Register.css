@@ -171,13 +171,13 @@ input:-webkit-autofill:active {
 .hamburgerRegister{
 
 z-index: 10000;
-
+display: none;
 
 }
 
 .registerNav{
 
-display: none;
+
 
 }
 .firstInner {
