@@ -4,8 +4,8 @@ import { userLoginFetch } from '../redux/actions';
 import { Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
 import { Input, Icon, Button } from 'antd';
-import './css/Login.css';
 import { Animated } from 'react-animated-css';
+import './css/Login.css';
 
 class Login extends Component {
   state = {
