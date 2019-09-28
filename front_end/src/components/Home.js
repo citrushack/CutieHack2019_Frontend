@@ -55,12 +55,19 @@ class Home extends Component {
         once: true,
     });
     this.state = {
-      auth: false
+      auth: false,
+      redirectRegister: false
     };
   }
 
   componentWillReceiveProps (){
     AOS.refresh();
+  }
+
+  handleClick = () => {
+    this.setState(prev => ({
+      redirectRegister: !prev.redirectRegister
+    }))
   }
 
   render(){
@@ -74,7 +81,7 @@ class Home extends Component {
                   <h1 className="mainTitle">CUTIE HACK</h1>
                   <div data-aos="fade-right" data-aos-delay="300" className="mainUnderline"></div>
                 <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
-                <Button className="mobileApply">hello</Button>
+                <Button onClick={this.handleClick} className="mobileApply">Apply</Button>
               </div>
           </div>
         </Animated>
