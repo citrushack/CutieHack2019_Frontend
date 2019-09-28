@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Hamburger from './Hamburger';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import { Icon } from 'antd';
+import { Redirect } from 'react-router-dom';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { Row, Container, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -48,7 +49,6 @@ class Arrow extends Component {
 }
 
 class Home extends Component {
-
   constructor(props, context) {
     super(props, context);
     AOS.init({
@@ -65,25 +65,28 @@ class Home extends Component {
   }
 
   handleClick = () => {
-    this.setState(prev => ({
-      redirectRegister: !prev.redirectRegister
-    }))
+    this.setState({
+      redirectRegister: true
+    })
   }
 
   render(){
+    if (this.state.redirectRegister){
+      return <Redirect push to= "/register" />
+    }
     return(
       <div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="heroStyling">
-          <div className="navbarHome"><Navbar /> </div>
-          <div className="homeNav"style={{paddingLeft: '10px'}}>
-          <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
-          <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
-        </div>
+            <div className="navbarHome"><Navbar /> </div>
+            <div className="homeNav"style={{paddingLeft: '10px'}}>
+            <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
+            <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+          </div>
             <Hamburger />
               <div className="mainHeaderContainer">
-                  <h1 className="mainTitle">CUTIE HACK</h1>
-                  <div data-aos="fade-right" data-aos-delay="300" className="mainUnderline"></div>
+                <h1 className="mainTitle">CUTIE HACK</h1>
+                <div data-aos="fade-right" data-aos-delay="300" className="mainUnderline"></div>
                 <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
                 <Button onClick={this.handleClick} className="mobileApply">Apply</Button>
               </div>

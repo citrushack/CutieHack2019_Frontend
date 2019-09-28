@@ -56,9 +56,11 @@ class Login extends Component {
       })
       .catch(err => console.log(err))
   }
+
   HomeRedirect = () => {
     window.location.assign('/')
   }
+
   render(){
     if (this.state.redirectToRegister) {
       return <Redirect push to= "/register" />
