@@ -169,10 +169,6 @@ input:-webkit-autofill:active {
 
 
 .hamburgerRegister{
-  z-index: 10000;
-}
-
-.registerNav{
   display: none;
 }
 

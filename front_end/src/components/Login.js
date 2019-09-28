@@ -56,7 +56,9 @@ class Login extends Component {
       })
       .catch(err => console.log(err))
   }
-
+  HomeRedirect = () => {
+    window.location.assign('/')
+  }
   render(){
     if (this.state.redirectToRegister) {
       return <Redirect push to= "/register" />
@@ -66,7 +68,9 @@ class Login extends Component {
     }
     return(
       <div className="login">
-        <Navbar loginCheck={this.props.redirectToLogin}/>
+         <div className="loginNav"style={{paddingLeft: '10px'}}>
+          <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
+        </div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="loginForm">
             <div className="topText">Log in</div>
