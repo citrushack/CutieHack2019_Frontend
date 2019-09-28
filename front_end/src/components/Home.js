@@ -73,9 +73,7 @@ class Home extends Component {
   }
 
   HomeRedirect = () => {
-    this.setState({
-      redirectHome: true
-    })
+    window.location.assign('/')
   }
 
   LoginRedirect = () => {
@@ -88,9 +86,6 @@ class Home extends Component {
     if (this.state.redirectRegister){
       return <Redirect push to= "/register" />
     }
-    if (this.state.redirectHome){
-      return <Redirect push to="/" />
-    }
     if (this.state.redirectLogin){
       return <Redirect push to="/login" />
     }
@@ -101,7 +96,11 @@ class Home extends Component {
             <div className="navbarHome"><Navbar /></div>
             <div className="homeNav"style={{paddingLeft: '10px'}}>
             <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
-            <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+            {this.props.currentUser.profile ?
+              <button className="buttons" onClick={this.LoginRedirect}>LOGOUT</button>
+              :
+              <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+            }
           </div>
             <Hamburger />
               <div className="mainHeaderContainer">
@@ -231,4 +230,10 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps)(Home);

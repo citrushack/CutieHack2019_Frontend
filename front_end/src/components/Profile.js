@@ -88,7 +88,7 @@ class Profile extends Component {
     return (
       <div>
         <Animated animationIn="fadeIn" isVisible={true}>
-          <div>
+          <div style={{paddingLeft: '10px'}}>
             <button className="profileHomebutton buttons" onClick={this.HomeRedirect}>HOME</button>
           </div>
           <div className="hamburger"> <Hamburger /> </div>

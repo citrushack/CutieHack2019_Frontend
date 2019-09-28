@@ -13,6 +13,7 @@ class Login extends Component {
     password: '',
     redirectToProfile: false,
     redirectToRegister: false,
+    redirectToForgot: false,
   }
 
   handleChange = (event) => {
@@ -41,20 +42,9 @@ class Login extends Component {
   }
 
   handleReset = () => {
-    fetch("http://2902b774.ngrok.io/api/sendResetEmail", {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({'email': 'jshin029@ucr.edu'}),
-      method: "POST",
+    this.setState({
+      redirectToForgot: true
     })
-      .then(resp => resp.json())
-      .then(resp => {
-        if (resp.message) {
-          console.log(resp.message)
-        }
-      })
-      .catch(err => console.log(err))
   }
 
   HomeRedirect = () => {
@@ -68,9 +58,12 @@ class Login extends Component {
     if (this.state.redirectToProfile) {
       return <Redirect push to = "/profile" />
     }
+    if (this.state.redirectToForgot) {
+      return <Redirect push to = "/forgotPassword" />
+    }
     return(
       <div className="login">
-         <div className="loginNav"style={{paddingLeft: '10px'}}>
+        <div className="loginNav"style={{paddingLeft: '10px'}}>
           <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
         </div>
         <Animated animationIn="fadeIn" isVisible={true}>
@@ -92,7 +85,6 @@ class Login extends Component {
             <Button onClick={this.handleReset} className="resetText">FORGOT PASSWORD?</Button>
           </div>
         </Animated>
-
       </div>
     )
   }

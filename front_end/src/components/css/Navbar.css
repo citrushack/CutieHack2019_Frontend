@@ -19,7 +19,8 @@ a:hover { color:white !important;}
   padding: 15px;
   position: relative;
 }
-/* .buttons:after {
+
+.buttons:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -34,6 +35,6 @@ a:hover { color:white !important;}
 .buttons:hover:after {
   width: 100%;
   left: 0;
-} */
+}
 
 button:focus {outline:0;}
