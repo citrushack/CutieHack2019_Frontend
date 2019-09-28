@@ -84,8 +84,8 @@ class Home extends Component {
               <img data-aos="fade-up" className="section2img" src={cutieIcon}></img>
             </div>
             <div className="s2">
-              <h1 data-aos="fade-up" className="sec2Title"><div className="about">ABOUT</div><div className="cutieHackHeader"> CUTIE HACK</div></h1>
-              <p data-aos="fade-up" className="sec2Text">Cutie Hack is a beginner-friendly, 12-hour hackathon. Hosted at UC Riverside, Cutie Hack is designed to help new hackers get used to the time crunch of a hackathon environment. <br></br> <br></br>Cutie Hack invites collegiate students to UC Riverside to collaborate and innovate. Throughout the 12 hours, participants work in teams on a project, attend workshops to learn about new technologies, and network with industry partners.</p>
+              <h1 data-aos="fade-up" className="sec2Title">ABOUT CUTIE HACK</h1>
+              <p data-aos="fade-up" className="sec2Text">Cutie Hack is a 12 hour hackathon hosted at UC Riverside designed for beginners. The hackathon invites students in the Riverside area to collaborate and innovate on projects. We will also be hosting several workshops to enable beginners to learn the skills they need to create a project.  <br></br> <br></br> This year, Cutie Hack is proud to announce that we will be accepting high school students as well!</p>
             </div>
           </div>
         </ScrollableAnchor>
@@ -99,10 +99,10 @@ class Home extends Component {
                 <Col className="noPadding">
                   <div className="faqBubble" >
                     <div>
-                      <Arrow title={'What is a hackathon'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
+                      <Arrow title={'What is a hackathon?'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
                     </div>
                     <div className="secondaryFaq">
-                      <Arrow title={'Who can attend?'} body={'We welcome all undergraduate UCR students! We do, however, encourage novice and first time hackers for this event.'} />
+                      <Arrow title={'Who can attend?'} body={'We welcome all undergraduate students from UCR, RCC, and CBU to attend. High school students in the surrounding area are also encouraged to attend!'} />
                     </div>
                     <div className="secondaryFaq">
                       <Arrow title={'Is there free food?'} body={'Yes! Meals, refreshments, and snacks will be provided throughout the event'} />
@@ -116,16 +116,16 @@ class Home extends Component {
                 <Col className="noPadding">
                   <div className="faq2Bubble">
                     <div>
-                      <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking devices!'} />
+                      <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking device(s)!'} />
                     </div>
                     <div className="secondaryFaq">
-                      <Arrow title={'What should I bring?'} body={'Student IDs are required. Consider brining a hacking machine, headphones, and a pillow. Feel free to bring your own parts as well but note that soldering is not allowed at CutieHack.'} />
+                      <Arrow title={'What should I bring?'} body={'Student IDs are required. Consider bringing a hacking machine, headphones, and computer peripherals. Feel free to bring your own parts as well but note that soldering is not allowed at Cutie Hack.'} />
                     </div>
                     <div className="secondaryFaq">
-                      <Arrow title={'What if I still have a question?'} body={'Email us at citrushack@gmail.com. We love answering questions'} />
+                      <Arrow title={'What if I don\'t know how to code?'} body={'Cutie Hack is a beginner friendly hackathon and open to all skill levels. During the event take the time to checkout workshops and collaborate with others!'} />
                     </div>
                     <div className="secondaryFaq">
-                      <Arrow title={'What if I do not know how to code'} body={"CutieHack is a beginner friendly hackathon and is open to all skill levels. During the event take the time to checkout workshops and collaborate with others"} />
+                      <Arrow title={'What if I still have questions?'} body={"Email us at citrushack@gmail.com. We love answering questions!"} />
                     </div>
                   </div>
                 </Col>
