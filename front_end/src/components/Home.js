@@ -75,6 +75,7 @@ class Home extends Component {
       <div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="heroStyling">
+          <div className="navbarHome"><Navbar /> </div>
           <div className="homeNav"style={{paddingLeft: '10px'}}>
           <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
           <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
