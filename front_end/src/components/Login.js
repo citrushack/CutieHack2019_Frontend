@@ -11,7 +11,7 @@ class Login extends Component {
   state = {
     email: '',
     password: '',
-    redirectToHome: false,
+    redirectToProfile: false,
     redirectToRegister: false,
   }
 
@@ -28,7 +28,7 @@ class Login extends Component {
      this.setState({
        email: '',
        password: '',
-       redirectToHome: true
+       redirectToProfile: true
      })
    })
    .catch(err => console.log(err))
@@ -63,8 +63,8 @@ class Login extends Component {
     if (this.state.redirectToRegister) {
       return <Redirect push to= "/register" />
     }
-    if (this.state.redirectToHome) {
-      return <Redirect push to = "/" />
+    if (this.state.redirectToProfile) {
+      return <Redirect push to = "/profile" />
     }
     return(
       <div className="login">

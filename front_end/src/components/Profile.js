@@ -38,7 +38,7 @@ class Profile extends Component {
 
   getProfile = () => {
       const token = localStorage.token;
-      fetch("http://16026b4e.ngrok.io/api/validateToken", {
+      fetch("http://0573a6fc.ngrok.io/api/validateToken", {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',

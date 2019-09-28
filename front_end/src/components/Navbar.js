@@ -49,6 +49,27 @@ class Navbar extends Component {
     window.location.assign('/')
   }
 
+  handleProfile = () => {
+    window.location.assign('/profile')
+  }
+
+  retProfile = () => {
+    return (
+      <div>
+        <button className="buttons" onClick={this.handleProfile}>PROFILE</button>
+        <button className="buttons" onClick={this.handleLogout}>LOGOUT</button>
+      </div>
+    )
+  }
+
+  retProfile2 = () => {
+    return (
+      <div>
+        <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+      </div>
+    )
+  }
+
   render(){
     console.log(this.props.currentUser.profile)
     let nav;
@@ -61,17 +82,9 @@ class Navbar extends Component {
 
     return(
       <div>
-         <div className="nav" style={nav}>
-           <button style={nav} className="buttons" onClick={this.HomeRedirect}>HOME</button>
-           <a className="buttons" href='#section2'>ABOUT</a>
-           <a className="buttons" href='#section3'>FAQs</a>
-           <a className="buttons" href='#section4'>ORGANIZERS</a>
-           <a className="buttons" href='#section5'>CONTACT</a>
-           {this.props.currentUser.profile ? (
-             <button className="buttons" onClick={this.handleLogout}>LOGOUT</button>
-           ):(
-             <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
-           )}
+        <div className="nav" style={nav}>
+          <button style={nav} className="buttons" onClick={this.HomeRedirect}>HOME</button>
+           {this.props.currentUser.profile ? (this.retProfile()):(this.retProfile2())}
          </div>
       </div>
     )
