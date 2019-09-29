@@ -82,7 +82,6 @@ export const getProfileFetch = () => {
         .then(resp => {
           if (resp.message) {
             // An error will occur if the token is invalid.
-            // If this happens, you may want to remove the invalid token.
             localStorage.removeItem("token")
           } else {
             dispatch(loginUser(resp.user))

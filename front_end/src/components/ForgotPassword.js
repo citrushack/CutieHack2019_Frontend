@@ -3,11 +3,13 @@ import { Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
 import { Input, Icon, Button } from 'antd';
 import { Animated } from 'react-animated-css';
+import { Toast } from 'react-bootstrap';
 import './css/ForgotPassword.css';
 
 class ForgotPassword extends Component {
   state={
-    email: ''
+    email: '',
+    show: false
   }
 
   handleChange = (event) => {
@@ -20,6 +22,12 @@ class ForgotPassword extends Component {
     window.location.assign('/')
   }
 
+  toggleShow = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
+  }
+
   handleReset = () => {
     fetch("http://0573a6fc.ngrok.io/api/sendResetEmail", {
       headers: {
@@ -30,11 +38,12 @@ class ForgotPassword extends Component {
     })
       .then(resp => resp.json())
       .then(resp => {
-        if (resp.message) {
+        if (resp.Status) {
+          this.setState({
+            email: '',
+            show: true
+          })
         }
-      })
-      this.setState({
-        email: ''
       })
       .catch(err => console.log(err))
   }
@@ -55,6 +64,14 @@ class ForgotPassword extends Component {
             <div className="submitField">
               <Button onClick={this.handleReset} className="submitButton">RESET PASSWORD</Button>
             </div>
+          </div>
+          <div className="toastStyling">
+            <Toast show={this.state.show} onClose={this.toggleShow}>
+              <Toast.Header>
+                <strong style={{color: '#42CAC0'}} className="mr-auto">Success</strong>
+              </Toast.Header>
+              <Toast.Body style={{color: '#42CAC0'}}>A reset link has been sent to your email!</Toast.Body>
+            </Toast>
           </div>
         </Animated>
       </div>
