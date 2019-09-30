@@ -38,6 +38,14 @@
   letter-spacing: 1px;
 }
 
+.borderCutie {
+  border-bottom: 3px solid #FCD139;
+  width: 35%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+}
+
 .section2 {
   height: 90vh;
   width: 100vw;
@@ -100,6 +108,11 @@ display: inline;
   font-weight: 300;
   font-size: 3.8em;
   letter-spacing: 1.5px;
+}
+
+.sec2Title {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .faqTitle {
@@ -181,7 +194,7 @@ display: inline;
 
 .section2img {
   width: 40%;
- /* padding-top: 10%; */
+  padding-top: 2%;
   display: block;
   margin: auto;
 }
@@ -197,10 +210,7 @@ display: inline;
 }
 
 #justForStats{
-
-display: flex;
-
-
+  display: flex;
 }
 
 .statsContainer {

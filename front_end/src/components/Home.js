@@ -135,6 +135,7 @@ class Home extends Component {
             </div>
             <div className="s2">
               <h1 data-aos="fade-up" className="sec2Title"><div className="about">ABOUT</div> <div className="cutieHackHeader">CUTIE HACK</div></h1>
+              <div data-aos="fade-right" data-aos-delay="300" className="borderCutie"></div>
               <p data-aos="fade-up" className="sec2Text">Cutie Hack is a 12 hour hackathon hosted at UC Riverside designed for beginners. The hackathon invites students in the Riverside area to collaborate and innovate on projects. We will also be hosting several workshops to enable beginners to learn the skills they need to create a project.  <br></br> <br></br> This year, Cutie Hack is proud to announce that we will be accepting high school students as well!</p>
             </div>
           </div>

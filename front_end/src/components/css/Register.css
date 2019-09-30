@@ -10,6 +10,9 @@
   padding-bottom: 3%;
 }
 
+.imageWrapper {
+}
+
 .registerInput {
   border: none;
   width: 90%;
@@ -99,8 +102,8 @@ input:-webkit-autofill:active {
 .cutieIcon {
   opacity: 0.15;
   position: absolute;
-  top: 15%;
-  left: 20%;
+  top: 10%;
+  left: 16%;
 }
 
 .outerParent {
