@@ -47,7 +47,7 @@ export const userPostFetch = (user) => {
 
 export const userLoginFetch = (user) => {
   return dispatch => {
-    return fetch("http://0573a6fc.ngrok.io/api/login", {
+    return fetch("http://5742604e.ngrok.io/api/login", {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -71,7 +71,7 @@ export const getProfileFetch = () => {
   return dispatch => {
     const token = localStorage.token;
     if (token) {
-      return fetch("http://0573a6fc.ngrok.io/api/validateToken", {
+      return fetch("http://5742604e.ngrok.io/api/validateToken", {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',

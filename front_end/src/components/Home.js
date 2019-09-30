@@ -17,6 +17,7 @@ const cutieIcon = require('./assets/cutieHome.png');
 const cutieFooter = require('./assets/cutieFooter.png');
 const acm = require('./assets/acm.png');
 const ieee = require('./assets/ieee.png');
+const antIcon = <Icon type="loading" className="spinner" spin />;
 
 class Arrow extends Component {
   constructor(props, context) {
@@ -56,12 +57,23 @@ class Home extends Component {
     });
     this.state = {
       auth: false,
-      redirectRegister: false
+      redirectRegister: false,
+      loading: false
     };
   }
 
   componentWillReceiveProps (){
     AOS.refresh();
+  }
+
+  loader = () => {
+    return (
+      <div>
+        <div className="alignMiddle">
+          {antIcon}
+        </div>
+      </div>
+    )
   }
 
   handleClick = () => {
@@ -78,18 +90,23 @@ class Home extends Component {
 
   LoginRedirect = () => {
     this.setState({
-      redirectLogin: true
+      redirectLogin: true,
     })
   }
 
-  render(){
-    if (this.state.redirectRegister){
-      return <Redirect push to= "/register" />
-    }
-    if (this.state.redirectLogin){
-      return <Redirect push to="/login" />
-    }
-    return(
+  handleReceive = () => {
+    this.setState({
+      loading: true
+    })
+  }
+
+  handleLogout = () => {
+    localStorage.removeItem("token")
+    window.location.assign('/')
+  }
+
+  retHome = () => {
+    return (
       <div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="heroStyling">
@@ -97,7 +114,7 @@ class Home extends Component {
             <div className="homeNav"style={{paddingLeft: '10px'}}>
             <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
             {this.props.currentUser.profile ?
-              <button className="buttons" onClick={this.LoginRedirect}>LOGOUT</button>
+              <button className="buttons" onClick={this.handleLogout}>LOGOUT</button>
               :
               <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
             }
@@ -225,6 +242,24 @@ class Home extends Component {
             </div>
           </div>
         </ScrollableAnchor>
+      </div>
+    )
+  }
+  render(){
+    if (this.state.redirectRegister){
+      return <Redirect push to= "/register" />
+    }
+    if (this.state.redirectLogin){
+      return <Redirect push to="/login" />
+    }
+    if (this.props.currentUser.profile && this.state.loading === false){
+      this.handleReceive();
+    }
+    return(
+      <div>
+      {localStorage.token ?
+        <div> {this.state.loading ? this.retHome(): this.loader()}</div>:this.retHome()
+      }
       </div>
     )
   }

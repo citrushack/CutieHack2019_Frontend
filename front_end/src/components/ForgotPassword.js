@@ -72,7 +72,10 @@ class ForgotPassword extends Component {
         <Animated animationIn="fadeIn" isVisible={true}>
           <div style={{display: 'flex'}}>
             <div className="fPwdForm">
-              <div className="topText">Forgot Password</div>
+              <div style={{display: 'flex'}}>
+                <div className="topText">Forgot Password</div>
+                {this.state.loading ? this.loader(): null}
+              </div>
               <div style={{marginTop: '4%'}} className="inputFields">
                 <input type='text' name="email" value={this.state.email} className="customInput" placeholder="Email" onChange={this.handleChange}/>
               </div>
@@ -80,7 +83,6 @@ class ForgotPassword extends Component {
               <div className="submitField">
                 <Button onClick={this.handleReset} className="submitButton">RESET PASSWORD</Button>
               </div>
-              {this.state.loading ? this.loader(): null}
             </div>
           </div>
         </Animated>

@@ -3,9 +3,11 @@ import {connect} from 'react-redux';
 import { userLoginFetch } from '../redux/actions';
 import { Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
-import { Input, Icon, Button } from 'antd';
+import { Spin, Input, Icon, Button } from 'antd';
 import { Animated } from 'react-animated-css';
 import './css/Login.css';
+
+const antIcon = <Icon type="loading" className="pwdSpinner" spin />;
 
 class Login extends Component {
   state = {
@@ -14,6 +16,7 @@ class Login extends Component {
     redirectToProfile: false,
     redirectToRegister: false,
     redirectToForgot: false,
+    loading: false
   }
 
   handleChange = (event) => {
@@ -24,12 +27,16 @@ class Login extends Component {
 
   handleSubmit = (event) => {
    event.preventDefault()
+   this.setState({
+     loading: true
+   })
    this.props.userLoginFetch(this.state)
    .then(resp => {
      this.setState({
        email: '',
        password: '',
-       redirectToProfile: true
+       redirectToProfile: true,
+       loading: false
      })
    })
    .catch(err => console.log(err))
@@ -51,6 +58,16 @@ class Login extends Component {
     window.location.assign('/')
   }
 
+  loader = () => {
+    return (
+      <div>
+        <div className="alignMiddle">
+          {antIcon}
+        </div>
+      </div>
+    )
+  }
+
   render(){
     if (this.state.redirectToRegister) {
       return <Redirect push to= "/register" />
@@ -68,7 +85,10 @@ class Login extends Component {
         </div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="loginForm">
-            <div className="topText">Log in</div>
+            <div style={{display: 'flex'}}>
+              <div className="topText">Log in</div>
+              {this.state.loading ? this.loader(): null}
+            </div>
             <div style={{marginTop: '4%'}}className="inputFields">
               <input type='text' name="email" value={this.state.email} className="customInput" placeholder="Email" onChange={this.handleChange}/>
             </div>
