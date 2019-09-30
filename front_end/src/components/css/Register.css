@@ -100,7 +100,7 @@ input:-webkit-autofill:active {
   opacity: 0.15;
   position: absolute;
   top: 15%;
-  left: 17%;
+  left: 20%;
 }
 
 .outerParent {
@@ -152,7 +152,6 @@ input:-webkit-autofill:active {
 }
 
 .applyButton:hover {
-  border: none !important;
   background-color: #909090 !important;
   border: 2px solid white;
 }
@@ -164,4 +163,65 @@ input:-webkit-autofill:active {
 
 .toastStyling {
   position: absolute;
+}
+
+@media screen and (max-width: 414px){
+
+
+.hamburgerRegister{
+  display: none;
+}
+
+.firstInner {
+  margin-top: 5%;
+  width: 90%;
+  padding-left: 20px;
+}
+
+.secondInner {
+  margin-top: 5%;
+  width: 90%;
+  padding-left: 20px;
+}
+
+.secondInner2 {
+  margin-top: 3%;
+  width: 90%;
+  padding-left: 20px;
+}
+
+.formFlex {
+  display: block;
+  margin: auto;
+  margin-left: 4%;
+}
+.checkText {
+  color: white;
+  padding-left: 10px;
+  width: 80%;
+}
+
+.formContainer {
+  margin: auto;
+  border-radius: 8px;
+  padding-bottom: 3%;
+  background-color: #27384F;
+  margin-bottom: 4%;
+  width: 100%;
+}
+
+.registrationTitle {
+  color: #FCD139;
+  font-weight: 300;
+  margin: 0;
+  font-size: 30px;
+}
+
+.cutieIcon {
+  opacity: 0.15;
+  position: absolute;
+  top: 15%;
+  left: 17%;
+  display: none;
+}
 }

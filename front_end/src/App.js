@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import Register from './components/Register';
 import PasswordReset from './components/PasswordReset';
 import AdminDashboard from './components/AdminDashboard';
+import ForgotPassword from './components/ForgotPassword';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -36,6 +37,7 @@ class App extends Component {
             <Route path="/signup" exact component={Signup}/>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
+            <Route path="/ForgotPassword" component={ForgotPassword}/>
             <Route path="/passwordReset/:token" component={PasswordReset}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/administratorDashboard" component={AdminDashboard}/>

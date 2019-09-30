@@ -3,16 +3,20 @@ import {connect} from 'react-redux';
 import { userLoginFetch } from '../redux/actions';
 import { Redirect } from 'react-router-dom';
 import Navbar from './Navbar';
-import { Input, Icon, Button } from 'antd';
-import './css/Login.css';
+import { Spin, Input, Icon, Button } from 'antd';
 import { Animated } from 'react-animated-css';
+import './css/Login.css';
+
+const antIcon = <Icon type="loading" className="pwdSpinner" spin />;
 
 class Login extends Component {
   state = {
     email: '',
     password: '',
-    redirectToHome: false,
+    redirectToProfile: false,
     redirectToRegister: false,
+    redirectToForgot: false,
+    loading: false
   }
 
   handleChange = (event) => {
@@ -23,11 +27,19 @@ class Login extends Component {
 
   handleSubmit = (event) => {
    event.preventDefault()
-   this.props.userLoginFetch(this.state)
    this.setState({
-     email: '',
-     password: '',
+     loading: true
    })
+   this.props.userLoginFetch(this.state)
+   .then(resp => {
+     this.setState({
+       email: '',
+       password: '',
+       redirectToProfile: true,
+       loading: false
+     })
+   })
+   .catch(err => console.log(err))
   }
 
   handleRegister = () => {
@@ -37,32 +49,46 @@ class Login extends Component {
   }
 
   handleReset = () => {
-    fetch("http://2902b774.ngrok.io/api/sendResetEmail", {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({'email': 'jshin029@ucr.edu'}),
-      method: "POST",
+    this.setState({
+      redirectToForgot: true
     })
-      .then(resp => resp.json())
-      .then(resp => {
-        if (resp.message) {
-          console.log(resp.message)
-        }
-      })
-      .catch(err => console.log(err))
+  }
+
+  HomeRedirect = () => {
+    window.location.assign('/')
+  }
+
+  loader = () => {
+    return (
+      <div>
+        <div className="alignMiddle">
+          {antIcon}
+        </div>
+      </div>
+    )
   }
 
   render(){
     if (this.state.redirectToRegister) {
-      return <Redirect push to="/register" />
+      return <Redirect push to= "/register" />
+    }
+    if (this.state.redirectToProfile) {
+      return <Redirect push to = "/profile" />
+    }
+    if (this.state.redirectToForgot) {
+      return <Redirect push to = "/forgotPassword" />
     }
     return(
       <div className="login">
-        <Navbar loginCheck={this.props.redirectToLogin}/>
+        <div className="loginNav"style={{paddingLeft: '10px'}}>
+          <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
+        </div>
         <Animated animationIn="fadeIn" isVisible={true}>
           <div className="loginForm">
-            <div className="topText">Log in</div>
+            <div style={{display: 'flex'}}>
+              <div className="topText">Log in</div>
+              {this.state.loading ? this.loader(): null}
+            </div>
             <div style={{marginTop: '4%'}}className="inputFields">
               <input type='text' name="email" value={this.state.email} className="customInput" placeholder="Email" onChange={this.handleChange}/>
             </div>
@@ -79,7 +105,6 @@ class Login extends Component {
             <Button onClick={this.handleReset} className="resetText">FORGOT PASSWORD?</Button>
           </div>
         </Animated>
-
       </div>
     )
   }

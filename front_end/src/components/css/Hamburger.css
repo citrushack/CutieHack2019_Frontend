@@ -1,0 +1,27 @@
+.hamburgerContainer{
+
+display: none;
+
+
+}
+
+
+@media screen and (max-width: 414px){
+
+.hamburgerContainer{
+display: block;
+fill: white;
+position: fixed;
+}
+.navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.1);
+    color: white;
+    border-color: white;
+    background-color: white;
+}
+
+.hamburgerContainer{display: none;}
+
+
+}

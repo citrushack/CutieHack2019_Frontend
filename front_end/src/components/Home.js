@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Hamburger from './Hamburger';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import { Icon } from 'antd';
+import { Redirect } from 'react-router-dom';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { Row, Container, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -15,6 +17,7 @@ const cutieIcon = require('./assets/cutieHome.png');
 const cutieFooter = require('./assets/cutieFooter.png');
 const acm = require('./assets/acm.png');
 const ieee = require('./assets/ieee.png');
+const antIcon = <Icon type="loading" className="spinner" spin />;
 
 class Arrow extends Component {
   constructor(props, context) {
@@ -48,14 +51,15 @@ class Arrow extends Component {
 }
 
 class Home extends Component {
-
   constructor(props, context) {
     super(props, context);
     AOS.init({
       once: true,
     });
     this.state = {
-      auth: false
+      auth: false,
+      redirectRegister: false,
+      loading: false
     };
   }
 
@@ -63,148 +67,265 @@ class Home extends Component {
     AOS.refresh();
   }
 
-  handleFacebook = () => {
-    window.location.assign('https://www.facebook.com/cutiehack/')
-  }
-
-  handleMail = () => {
-    window.location.assign('https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=citrushack@gmail.com')
-  }
-
-  handleTwitter = () => {
-    window.location.assign('https://twitter.com/citrushack')
-  }
-
-  handleInstagram = () => {
-    window.location.assign('https://www.instagram.com/citrushack_ucr/')
-  }
-
-  <div className="heroStyling">
-  <Navbar />
-  <div className="mainHeaderContainer">
-    <h1 className="mainTitle">CUTIE HACK</h1>
-    <div data-aos="fade-right" data-aos-delay="200" className="mainUnderline"></div>
-    <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
-  </div>
-</div>
-        </Animated >
-  <ScrollableAnchor id={'section2'}>
-    <div className="section2">
-      <div className="s1">
-        <img data-aos="fade-up" className="section2img" src={cutieIcon}></img>
+  loader = () => {
+    return (
+      <div>
+        <div className="alignMiddle">
+          {antIcon}
+        </div>
       </div>
-      <div className="s2">
-        <h1 data-aos="fade-up" className="sec2Title">ABOUT CUTIE HACK</h1>
-        <p data-aos="fade-up" className="sec2Text">Cutie Hack is a beginner-friendly, 12-hour hackathon. Hosted at UC Riverside, Cutie Hack is designed to help new hackers get used to the time crunch of a hackathon environment. <br></br> <br></br>Cutie Hack invites collegiate students to UC Riverside to collaborate and innovate. Throughout the 12 hours, participants work in teams on a project, attend workshops to learn about new technologies, and network with industry partners.</p>
-      </div>
-    </div>
-  </ScrollableAnchor>
-  <ScrollableAnchor id={'section3'}>
-    <div className="section3">
-      <div style={{ width: '100%', textAlign: 'center' }}>
-        <h1 className="sec3Title">FAQs</h1>
-      </div>
-      <Container fluid className="noPadding">
-        <Row className="noMargin">
-          <Col className="noPadding">
-            <div className="faqBubble" style={{ float: 'right' }}>
-              <div>
-                <Arrow title={'What is a hackathon?'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
-              </div>
-              <div className="secondaryFaq">
-                <Arrow title={'Who can attend?'} body={'We welcome all undergraduate UCR students! We do, however, encourage novice and first time hackers for this event.'} />
-              </div>
-              <div className="secondaryFaq">
-                <Arrow title={'Is there free food?'} body={'Yes! Meals, refreshments, and snacks will be provided throughout the event.'} />
-              </div>
-              <div className="secondaryFaq">
-                <Arrow title={'Do I need a team?'} body={'Teams are not required, but are recommended. Teams are capped at 4 members and you will have an opportunity to form teams at the start of the event as well.'} />
-              </div>
+    )
+  }
 
+  handleClick = () => {
+    this.setState({
+      redirectRegister: true,
+      redirectHome: false,
+      redirectLogin: false
+    })
+  }
+
+  HomeRedirect = () => {
+    window.location.assign('/')
+  }
+
+  LoginRedirect = () => {
+    this.setState({
+      redirectLogin: true,
+    })
+  }
+
+  handleReceive = () => {
+    this.setState({
+      loading: true
+    })
+  }
+
+  handleLogout = () => {
+    localStorage.removeItem("token")
+    window.location.assign('/')
+  }
+
+  retHome = () => {
+    return (
+      <div>
+        <Animated animationIn="fadeIn" isVisible={true}>
+          <div className="heroStyling">
+            <div className="navbarHome"><Navbar /></div>
+            <div className="homeNav" style={{ paddingLeft: '10px' }}>
+              <button className="buttons" onClick={this.HomeRedirect}>HOME</button>
+              {this.props.currentUser.profile ?
+                <button className="buttons" onClick={this.handleLogout}>LOGOUT</button>
+                :
+                <button className="buttons" onClick={this.LoginRedirect}>LOGIN</button>
+              }
             </div>
-          </Col>
-          <Col className="noPadding">
-            <div className="faqBubble">
-              <div>
-                <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking devices!'} />
-              </div>
-              <div className="secondaryFaq">
-                <Arrow title={'What should I bring?'} body={'Student IDs are required. Consider bringing a hacking machine, headphones, and a pillow. Feel free to bring your own parts as well but note that soldering is not allowed at CutieHack.'} />
-              </div>
-              <div className="secondaryFaq">
-                <Arrow title={'What if I still have a question?'} body={'Email us at citrushack@gmail.com. We love answering  questions!'} />
-              </div>
-              <div className="secondaryFaq">
-                <Arrow title={'What if I do not know how to code?'} body={"CutieHack is a beginner friendly hackathon and is open to all skill levels. During the event, take the time to checkout workshops and collaborate with others."} />
+            <Hamburger />
+            <div className="mainHeaderContainer">
+              <h1 className="mainTitle">CUTIE HACK</h1>
+              <div data-aos="fade-right" data-aos-delay="300" className="mainUnderline"></div>
+              <h2 className="mainSubTitle">NOVEMBER 9, 2019</h2>
+              <Button onClick={this.handleClick} className="mobileApply">Apply</Button>
+            </div>
+          </div>
+        </Animated>
+        <ScrollableAnchor id={'section2'}>
+          <div className="section2">
+            <div className="s1">
+              <img data-aos="fade-up" className="section2img" src={cutieIcon}></img>
+            </div>
+            <div className="s2">
+              <h1 data-aos="fade-up" className="sec2Title"><div className="about">ABOUT</div> <div className="cutieHackHeader">CUTIE HACK</div></h1>
+              <p data-aos="fade-up" className="sec2Text">Cutie Hack is a 12 hour hackathon hosted at UC Riverside designed for beginners. The hackathon invites students in the Riverside area to collaborate and innovate on projects. We will also be hosting several workshops to enable beginners to learn the skills they need to create a project.  <br></br> <br></br> This year, Cutie Hack is proud to announce that we will be accepting high school students as well!</p>
+            </div>
+          </div>
+        </ScrollableAnchor>
+        <ScrollableAnchor id={'section3'}>
+          <div className="section3">
+            <div style={{ width: '100%', textAlign: 'center' }}>
+              <h1 className="sec3Title">FAQs</h1>
+            </div>
+            <Container fluid className="noPadding">
+              <Row className="noMarginFAQ">
+                <Col className="noPadding">
+                  <div className="faqBubble" >
+                    <div>
+                      <Arrow title={'What is a hackathon?'} body={"A hackathon is a place where you and hundreds of other people learn, build, and create new technologies over the course of one weekend! Hackathons let you try learning a new skill, commit to that crazy idea you've never had time for, or make new friendships and strengthen old ones."} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'Who can attend?'} body={'We welcome all undergraduate students from UCR, RCC, and CBU to attend. High school students in the surrounding area are also encouraged to attend!'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'Is there free food?'} body={'Yes! Meals, refreshments, and snacks will be provided throughout the event'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'Do I need a team?'} body={'Teams are not required, but are recommended. Teams are capped at 4 members and you will have an opportunity to form teams at the start of the event as well.'} />
+                    </div>
+
+                  </div>
+                </Col>
+                <Col className="noPadding">
+                  <div className="faq2Bubble">
+                    <div>
+                      <Arrow title={'Is Cutie Hack free?'} body={'Absolutely! There is no cost to attend, but do bring your own hacking device(s)!'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'What should I bring?'} body={'Student IDs are required. Consider bringing a hacking machine, headphones, and computer peripherals. Feel free to bring your own parts as well but note that soldering is not allowed at Cutie Hack.'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'What if I don\'t know how to code?'} body={'Cutie Hack is a beginner friendly hackathon and open to all skill levels. During the event take the time to checkout workshops and collaborate with others!'} />
+                    </div>
+                    <div className="secondaryFaq">
+                      <Arrow title={'What if I still have questions?'} body={"Email us at citrushack@gmail.com. We love answering questions!"} />
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </ScrollableAnchor>
+        <div className="stats">
+          <div id="justForStats">
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" className="statsHeader">12</span>
+              <br></br>
+              <span className="statsSubHeader" style={{ paddingLeft: '10px' }}>HOURS</span>
+            </div>
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="200" className="statsHeader">300</span>
+              <br></br>
+              <span className="statsSubHeader">HACKERS</span>
+            </div>
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="400" className="statsHeader">75</span>
+              <br></br>
+              <span className="statsSubHeader">PROJECTS</span>
+            </div>
+          </div>
+        </div>
+        <ScrollableAnchor id={'section4'}>
+          <div className="section4">
+            <div style={{ width: '100%', textAlign: 'center' }}>
+              <h1 className="sec4Title">ORGANIZERS</h1>
+              <Container style={{ marginTop: '60px' }} fluid className="noPadding">
+                <Row className="noMarginSponsor">
+                  <Col className="noPaddingSponsor">
+                    <a href="https://acmucr.org/">
+                      <img className="acm" src={acm}></img>
+                    </a>
+                  </Col>
+                  <Col className="noPaddingSponsor">
+                    <a href="https://ieee.ee.ucr.edu/">
+                      <img className="ieee" src={ieee}></img>
+                    </a>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+            <img className="homeFooter" src={cutieFooter}></img>
+          </div>
+        </ScrollableAnchor>
+        <ScrollableAnchor id={'section5'}>
+          <div className="footer">
+            <div className="footerWrap">
+              <div style={{ margin: 'auto' }}>
+                <a href="https://www.facebook.com/cutiehack/"><Icon className="footerIcon" type="facebook" /></a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=citrushack@gmail.com'"><Icon className="footerIcon" type="mail" /></a>
+                <a href="https://twitter.com/citrushack"><Icon className="footerIcon" type="twitter-square" theme="filled" /></a>
+                <a href="https://www.instagram.com/citrushack_ucr/"><Icon className="footerIcon" type="instagram" /></a>
               </div>
             </div>
           </Col>
         </Row>
       </Container>
-    </div>
-  </ScrollableAnchor>
-  <div className="stats">
-    <div style={{ display: 'flex' }}>
-      <div className="statsContainer">
-        <span data-aos="fade-down" data-aos-duration="200" className="statsHeader">12</span>
-        <br></br>
-        <span className="statsSubHeader" style={{ paddingLeft: '10px' }}>HOURS</span>
-      </div>
-      <div className="statsContainer">
-        <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="200" className="statsHeader">300</span>
-        <br></br>
-        <span className="statsSubHeader">HACKERS</span>
-      </div>
-      <div className="statsContainer">
-        <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="400" className="statsHeader">75</span>
-        <br></br>
-        <span className="statsSubHeader">PROJECTS</span>
-      </div>
-    </div>
-  </div>
-  <ScrollableAnchor id={'section4'}>
-    <div className="section4">
-      <div style={{ width: '100%', textAlign: 'center' }}>
-        <h1 className="sec4Title">SPECIAL THANKS</h1>
-        <Container style={{ marginTop: '60px' }} fluid className="noPadding">
-          <Row className="noMargin">
-            <Col className="noPadding">
-              <a href="https://acmucr.org/">
-                <img className="acm" src={acm}></img>
-              </a>
-            </Col>
-            <Col className="noPadding">
-              <a href="https://ieee.ee.ucr.edu/">
-                <img className="ieee" src={ieee}></img>
-              </a>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-      <img className="homeFooter" src={cutieFooter}></img>
-    </div>
-  </ScrollableAnchor>
-  <ScrollableAnchor id={'section5'}>
-    <div className="footer">
-      <div className="footerWrap">
-        <div style={{ margin: 'auto' }}>
-          <Icon onClick={this.handleFacebook} className="footerIcon" type="facebook" />
-          <Icon onClick={this.handleMail} className="footerIcon" type="mail" />
-          <Icon onClick={this.handleTwitter} className="footerIcon" type="twitter-square" theme="filled" />
-          <Icon onClick={this.handleInstagram} className="footerIcon" type="instagram" />
+    </div >
+  </ScrollableAnchor >
+      <div className="stats">
+        <div style={{ display: 'flex' }}>
+          <div className="statsContainer">
+            <span data-aos="fade-down" data-aos-duration="200" className="statsHeader">12</span>
+            <br></br>
+            <span className="statsSubHeader" style={{ paddingLeft: '10px' }}>HOURS</span>
+          </div>
+          <div className="statsContainer">
+            <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="200" className="statsHeader">300</span>
+            <br></br>
+            <span className="statsSubHeader">HACKERS</span>
+          </div>
+          <div className="statsContainer">
+            <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="400" className="statsHeader">75</span>
+            <br></br>
+            <span className="statsSubHeader">PROJECTS</span>
+          </div>
         </div>
       </div>
-      <div style={{ textAlign: 'center' }}>
-        <p className="footerText">Made with ♥ in Riverside, CA</p>
-      </div>
-      <div style={{ paddingBottom: '0.5%', textAlign: 'center' }}>
-        <p className="footerText">© 2019 Cutie Hack</p>
-      </div>
-    </div>
-  </ScrollableAnchor>
+      <ScrollableAnchor id={'section4'}>
+        <div className="section4">
+          <div style={{ width: '100%', textAlign: 'center' }}>
+            <h1 className="sec4Title">SPECIAL THANKS</h1>
+            <Container style={{ marginTop: '60px' }} fluid className="noPadding">
+              <Row className="noMargin">
+                <Col className="noPadding">
+                  <a href="https://acmucr.org/">
+                    <img className="acm" src={acm}></img>
+                  </a>
+                </Col>
+                <Col className="noPadding">
+                  <a href="https://ieee.ee.ucr.edu/">
+                    <img className="ieee" src={ieee}></img>
+                  </a>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          <img className="homeFooter" src={cutieFooter}></img>
+        </div>
+      </ScrollableAnchor>
+      <ScrollableAnchor id={'section5'}>
+        <div className="footer">
+          <div className="footerWrap">
+            <div style={{ margin: 'auto' }}>
+              <Icon onClick={this.handleFacebook} className="footerIcon" type="facebook" />
+              <Icon onClick={this.handleMail} className="footerIcon" type="mail" />
+              <Icon onClick={this.handleTwitter} className="footerIcon" type="twitter-square" theme="filled" />
+              <Icon onClick={this.handleInstagram} className="footerIcon" type="instagram" />
+            </div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p className="footerText">Made with ♥ in Riverside, CA</p>
+          </div>
+          <div style={{ paddingBottom: '0.5%', textAlign: 'center' }}>
+            <p className="footerText">© 2019 Cutie Hack</p>
+          </div>
+        </div>
+      </ScrollableAnchor>
       </div >
+    )
+  }
+  render() {
+    if (this.state.redirectRegister) {
+      return <Redirect push to="/register" />
+    }
+    if (this.state.redirectLogin) {
+      return <Redirect push to="/login" />
+    }
+    if (this.props.currentUser.profile && this.state.loading === false) {
+      this.handleReceive();
+    }
+    return (
+      <div>
+        {localStorage.token ?
+          <div> {this.state.loading ? this.retHome() : this.loader()}</div> : this.retHome()
+        }
+      </div>
     )
   }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps)(Home);

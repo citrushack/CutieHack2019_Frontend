@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.23.2",
     "aos": "^2.3.4",
+    "mdbreact": "^4.20.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-animated-css": "^1.2.1",
