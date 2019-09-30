@@ -235,70 +235,67 @@ class Home extends Component {
                 <a href="https://www.instagram.com/citrushack_ucr/"><Icon className="footerIcon" type="instagram" /></a>
               </div>
             </div>
-          </Col>
-        </Row>
-      </Container>
-    </div >
-  </ScrollableAnchor >
-      <div className="stats">
-        <div style={{ display: 'flex' }}>
-          <div className="statsContainer">
-            <span data-aos="fade-down" data-aos-duration="200" className="statsHeader">12</span>
-            <br></br>
-            <span className="statsSubHeader" style={{ paddingLeft: '10px' }}>HOURS</span>
-          </div>
-          <div className="statsContainer">
-            <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="200" className="statsHeader">300</span>
-            <br></br>
-            <span className="statsSubHeader">HACKERS</span>
-          </div>
-          <div className="statsContainer">
-            <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="400" className="statsHeader">75</span>
-            <br></br>
-            <span className="statsSubHeader">PROJECTS</span>
-          </div>
-        </div>
-      </div>
-      <ScrollableAnchor id={'section4'}>
-        <div className="section4">
-          <div style={{ width: '100%', textAlign: 'center' }}>
-            <h1 className="sec4Title">SPECIAL THANKS</h1>
-            <Container style={{ marginTop: '60px' }} fluid className="noPadding">
-              <Row className="noMargin">
-                <Col className="noPadding">
-                  <a href="https://acmucr.org/">
-                    <img className="acm" src={acm}></img>
-                  </a>
-                </Col>
-                <Col className="noPadding">
-                  <a href="https://ieee.ee.ucr.edu/">
-                    <img className="ieee" src={ieee}></img>
-                  </a>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-          <img className="homeFooter" src={cutieFooter}></img>
-        </div>
-      </ScrollableAnchor>
-      <ScrollableAnchor id={'section5'}>
-        <div className="footer">
-          <div className="footerWrap">
-            <div style={{ margin: 'auto' }}>
-              <Icon onClick={this.handleFacebook} className="footerIcon" type="facebook" />
-              <Icon onClick={this.handleMail} className="footerIcon" type="mail" />
-              <Icon onClick={this.handleTwitter} className="footerIcon" type="twitter-square" theme="filled" />
-              <Icon onClick={this.handleInstagram} className="footerIcon" type="instagram" />
+          </div >
+        </ScrollableAnchor >
+        <div className="stats">
+          <div style={{ display: 'flex' }}>
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" className="statsHeader">12</span>
+              <br></br>
+              <span className="statsSubHeader" style={{ paddingLeft: '10px' }}>HOURS</span>
+            </div>
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="200" className="statsHeader">300</span>
+              <br></br>
+              <span className="statsSubHeader">HACKERS</span>
+            </div>
+            <div className="statsContainer">
+              <span data-aos="fade-down" data-aos-duration="200" data-aos-delay="400" className="statsHeader">75</span>
+              <br></br>
+              <span className="statsSubHeader">PROJECTS</span>
             </div>
           </div>
-          <div style={{ textAlign: 'center' }}>
-            <p className="footerText">Made with ♥ in Riverside, CA</p>
-          </div>
-          <div style={{ paddingBottom: '0.5%', textAlign: 'center' }}>
-            <p className="footerText">© 2019 Cutie Hack</p>
-          </div>
         </div>
-      </ScrollableAnchor>
+        <ScrollableAnchor id={'section4'}>
+          <div className="section4">
+            <div style={{ width: '100%', textAlign: 'center' }}>
+              <h1 className="sec4Title">SPECIAL THANKS</h1>
+              <Container style={{ marginTop: '60px' }} fluid className="noPadding">
+                <Row className="noMargin">
+                  <Col className="noPadding">
+                    <a href="https://acmucr.org/">
+                      <img className="acm" src={acm}></img>
+                    </a>
+                  </Col>
+                  <Col className="noPadding">
+                    <a href="https://ieee.ee.ucr.edu/">
+                      <img className="ieee" src={ieee}></img>
+                    </a>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+            <img className="homeFooter" src={cutieFooter}></img>
+          </div>
+        </ScrollableAnchor>
+        <ScrollableAnchor id={'section5'}>
+          <div className="footer">
+            <div className="footerWrap">
+              <div style={{ margin: 'auto' }}>
+                <Icon onClick={this.handleFacebook} className="footerIcon" type="facebook" />
+                <Icon onClick={this.handleMail} className="footerIcon" type="mail" />
+                <Icon onClick={this.handleTwitter} className="footerIcon" type="twitter-square" theme="filled" />
+                <Icon onClick={this.handleInstagram} className="footerIcon" type="instagram" />
+              </div>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <p className="footerText">Made with ♥ in Riverside, CA</p>
+            </div>
+            <div style={{ paddingBottom: '0.5%', textAlign: 'center' }}>
+              <p className="footerText">© 2019 Cutie Hack</p>
+            </div>
+          </div>
+        </ScrollableAnchor>
       </div >
     )
   }
