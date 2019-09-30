@@ -84,6 +84,7 @@ class Profile extends Component {
       </div>
     )
   }
+
   content = () => {
     return (
       <div>
