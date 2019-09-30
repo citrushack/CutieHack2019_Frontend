@@ -100,7 +100,7 @@ input:-webkit-autofill:active {
   opacity: 0.15;
   position: absolute;
   top: 15%;
-  left: 17%;
+  left: 20%;
 }
 
 .outerParent {
